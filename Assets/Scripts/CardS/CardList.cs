@@ -1,7 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class CardList : MonoBehaviour
@@ -48,26 +46,5 @@ public class CardList : MonoBehaviour
         }
 
         cardObjects.RemoveAt(cardId);
-    }
-}
-
-public interface ICardLoader
-{
-    public List<CardObject> LoadCards(string path);
-}
-
-public class DefaultCardLoader : ICardLoader
-{
-    List<CardObject> ICardLoader.LoadCards(string path = null)
-    {
-        throw new System.NotImplementedException();
-    }
-}
-
-public class FileCardLoader : ICardLoader
-{
-    List<CardObject> ICardLoader.LoadCards(string path)
-    {
-        throw new System.NotImplementedException();
     }
 }
