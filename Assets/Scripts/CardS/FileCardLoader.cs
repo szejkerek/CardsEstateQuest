@@ -2,7 +2,7 @@
 
 public class FileCardLoader : ICardLoader
 {
-    List<CardObject> ICardLoader.LoadCards(string path)
+    public List<CardObject> LoadCards(string path)
     {
         throw new System.NotImplementedException();
     }

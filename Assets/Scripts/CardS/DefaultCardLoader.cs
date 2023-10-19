@@ -2,7 +2,7 @@
 
 public class DefaultCardLoader : ICardLoader
 {
-    List<CardObject> ICardLoader.LoadCards(string path = null)
+    public List<CardObject> LoadCards(string path)
     {
         throw new System.NotImplementedException();
     }

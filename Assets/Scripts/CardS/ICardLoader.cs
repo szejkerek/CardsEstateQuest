@@ -2,5 +2,5 @@
 
 public interface ICardLoader
 {
-    public List<CardObject> LoadCards(string path);
+    public List<CardObject> LoadCards(string path = null);
 }
