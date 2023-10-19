@@ -3,6 +3,6 @@
 [CreateAssetMenu(fileName = "CardParameter", menuName = "Card/CardParameter")]
 public class CardParameter : ScriptableObject
 {
-    public int points;
-    public string category;
+    [field: SerializeField] public int Points { private set; get; }
+    [field: SerializeField] public string Category { private set; get; }
 }
