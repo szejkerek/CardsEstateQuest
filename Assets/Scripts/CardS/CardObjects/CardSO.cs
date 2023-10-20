@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Card", menuName = "Card/Card")]
-public class CardSO : ScriptableObject
+[CreateAssetMenu(fileName = "CardDefault", menuName = "Card/CardObject")]
+public class CardSO : ScriptableObject, ICard
 {
-    [field: SerializeField] public CardFigure Fiugure { private set; get; }
+    [field: SerializeField] public CardFigure Figure { private set; get; }
     [field: SerializeField] public CardColor Color { private set; get; }
     [field: SerializeField] public Sprite Pictogram { private set; get; }
     [field: SerializeField] public List<CardParameter> Parameters { private set; get; }

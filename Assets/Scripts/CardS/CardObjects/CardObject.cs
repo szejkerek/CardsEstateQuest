@@ -1,32 +1,27 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class CardObject
+public class CardObject: ICard
 {
-    public CardFigure Fiugure => fiugure;
+    public CardFigure Figure => figure;
     public CardColor Color => color;
     public Sprite Pictogram => pictogram;
     public List<CardParameter> Parameters => parameters;
     public GameObject Model => model;
-    
-    private CardFigure fiugure;
+
+    private CardFigure figure;
     private CardColor color;
     private Sprite pictogram;
     private List<CardParameter> parameters;
     private GameObject model;
 
-    public CardObject(CardSO cardSO)
+    public CardObject(CardFigure _fiugure, 
+                      CardColor _color,
+                      Sprite _sprite,
+                      List<CardParameter> _cardParameters,
+                      GameObject _model)
     {
-        fiugure = cardSO.Fiugure; 
-        color = cardSO.Color;
-        pictogram = cardSO.Pictogram;
-        parameters = cardSO.Parameters;
-        model = cardSO.Model;
-    }
-
-    public CardObject(CardFigure _fiugure, CardColor _color, Sprite _sprite, List<CardParameter> _cardParameters, GameObject _model)
-    {
-        fiugure = _fiugure;
+        figure = _fiugure;
         color = _color;
         pictogram = _sprite;
         parameters = _cardParameters;
