@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Hard
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Hard
-  <Icon>k__BackingField: {fileID: 0}
+  <Icon>k__BackingField: {fileID: 21300000, guid: d1313c1c68524af46b8a6d08617e3bf5, type: 3}
   <CardParameter>k__BackingField: {fileID: 0}
-  <NumberOfParameters>k__BackingField: 0
-  <NumberOfBombs>k__BackingField: 0
+  <NumberOfParameters>k__BackingField: 3
+  <NumberOfBombs>k__BackingField: 666
