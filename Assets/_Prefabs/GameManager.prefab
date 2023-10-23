@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6858865119598840146}
   - component: {fileID: 6858865119598840147}
   - component: {fileID: 7659888770948953012}
+  - component: {fileID: 5470280096728946927}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -59,3 +60,19 @@ MonoBehaviour:
   prefab: {fileID: 2097753518464822301, guid: 32d13ee0d68da9b468f55b78f789d0e9, type: 3}
   gridSize: {x: 2, y: 2}
   gridSpacing: {x: 5, y: 5}
+--- !u!114 &5470280096728946927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6858865119598840144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3943719ece7fff14d842d1c80658170c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_DifficultySO: {fileID: 11400000, guid: dc3b35aa06cb1124eb27ad16a5aea22e, type: 2}
+  nicknameText: {fileID: 0}
+  bombsLeftText: {fileID: 0}
+  difficultyIcon: {fileID: 0}
