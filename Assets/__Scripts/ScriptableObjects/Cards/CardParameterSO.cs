@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "CardParameter", menuName = "ICard/CardParameter")]
+[CreateAssetMenu(fileName = "CardParameter", menuName = "Card/CardParameter")]
 public class CardParameter : ScriptableObject
 {
     [field: SerializeField] public int Points { private set; get; }
