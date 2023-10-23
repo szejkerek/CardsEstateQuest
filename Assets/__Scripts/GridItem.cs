@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 
 public class GridItem : MonoBehaviour
 {
+    [SerializeField] bool isTaken = false;
     [SerializeField] Material _hoverMaterial;
     Material _initalMateral;
     Renderer _renderer;
@@ -18,11 +19,12 @@ public class GridItem : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (!hoversOver)
+        if (!hoversOver && isTaken)
             return;
 
         ICard card = GameManager.Instance.CardList.GetRandomCard();
         Instantiate(card.Model, transform.position, transform.rotation);
+        isTaken = true;
     }
 
     public void OnMouseOver()
