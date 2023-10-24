@@ -11,45 +11,51 @@ public class CrudList<T>
         items = new List<T>();   
     }
 
-    public void Create(IDataLoader<T> loader, string path)
+    public void LoadList(IDataLoader<T> loader, string path)
     {
         items = loader.LoadCards(path);
     }
 
-    public T GetCard(int cardId)
+    public T GetItem(int itemID)
     {
-        if (items != null || items.Count > cardId)
+        if (items.Count > itemID)
         {
-            Debug.LogError($"Couldn't get card with id - {cardId}");
+            Debug.LogError($"Couldn't get item with id - {itemID}");
+            return default;
         }
-        return items.ElementAt(cardId);
+        return items.ElementAt(itemID);
     }
 
-    public T GetRandomCard()
+    public T GetRandomItem()
     {
         int index = Random.Range(0, items.Count);
         return items[index];
     }
 
-    public void UpdateCard(T newCard, int cardId)
+    public void AddItem(T item)
     {
-        if (items != null || items.Count > cardId)
-        {
-            Debug.LogError($"Couldn't update card with id - {cardId}");
-            return;
-        }
-
-        items[cardId] = newCard;
+        items.Add(item);
     }
 
-    public void RemoveCard(int cardId)
+    public void UpdateItem(T newItem, int cardId)
     {
         if (items != null || items.Count > cardId)
         {
-            Debug.LogError($"Couldn't remove card with id - {cardId}");
+            Debug.LogError($"Couldn't update item with id - {cardId}");
             return;
         }
 
-        items.RemoveAt(cardId);
+        items[cardId] = newItem;
+    }
+
+    public void RemoveItem(int itemId)
+    {
+        if (items != null || items.Count > itemId)
+        {
+            Debug.LogError($"Couldn't remove item with id - {itemId}");
+            return;
+        }
+
+        items.RemoveAt(itemId);
     }
 }

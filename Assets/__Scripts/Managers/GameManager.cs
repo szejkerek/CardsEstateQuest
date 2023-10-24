@@ -11,7 +11,7 @@ public class GameManager : Singleton<GameManager>
 
     private void Start()
     {
-        cardList.Create(new DefaultLoader<ICard>(), "DefaultCards"); 
+        cardList.LoadList(new DefaultLoader<ICard>(), "DefaultCards"); 
         gridManager = GetComponent<GridManager>();    
     }
 }
