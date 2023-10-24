@@ -6,7 +6,7 @@ public class CardParameterSO : ScriptableObject, IParameter
     [field: SerializeField] public string Category { private set; get; }
 }
 
-internal interface IParameter
+public interface IParameter
 {
     string Category { get; }
 }
@@ -16,7 +16,7 @@ public class CardParameter : IParameter
 {
     public string Category => _category;
 
-    private string _category;
+    [SerializeField] private string _category;
 
     public CardParameter(string category)
     {

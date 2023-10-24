@@ -15,7 +15,12 @@ public interface IDifficulty
 [System.Serializable]
 public class ParameterMinMax
 {
-    int parameter;
-    float min;
-    float max;
+    public CardParameterSO Parameter => parameter;
+    [SerializeField] CardParameterSO parameter;
+
+    public float Min => min;
+    [SerializeField] float min;
+
+    public float Max => max;
+    [SerializeField] float max;
 }

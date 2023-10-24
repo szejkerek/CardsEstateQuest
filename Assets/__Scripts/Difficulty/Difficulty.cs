@@ -10,7 +10,6 @@ public class Difficulty : IDifficulty
     public int NumberOfParameters => _numberOfParameters;
     public int NumberOfBombs => _numberOfBombs;
 
-
     private string _name;
     private Sprite _icon;
     private List<ParameterMinMax> _cardParameters;
