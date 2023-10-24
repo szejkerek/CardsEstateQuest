@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 
-public class FileCardLoader : ICardLoader
+public class FileDataLoader<T> : IDataLoader<T>
 {
-    public List<ICard> LoadCards(string path)
+    public List<T> LoadCards(string path)
     {
         throw new System.NotImplementedException();
     }

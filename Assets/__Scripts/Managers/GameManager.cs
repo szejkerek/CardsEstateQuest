@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class GameManager : Singleton<GameManager> 
 {
-    public CardList CardList => cardList;
-    CardList cardList = new CardList();    
+    public CrudList<ICard> CardList => cardList;
+    CrudList<ICard> cardList = new CrudList<ICard>();    
     public GridManager GridManager => gridManager;
     GridManager gridManager;
 
     private void Start()
     {
-        cardList.Create(new DefaultCardLoader(), "DefaultCards"); 
+        cardList.Create(new DefaultLoader<ICard>(), "DefaultCards"); 
         gridManager = GetComponent<GridManager>();    
     }
 }
