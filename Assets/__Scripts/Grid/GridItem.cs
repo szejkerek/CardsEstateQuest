@@ -1,6 +1,4 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.InputSystem;
 
 public class GridItem : MonoBehaviour
 {
@@ -19,7 +17,7 @@ public class GridItem : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (!hoversOver && isTaken)
+        if (!hoversOver || isTaken)
             return;
 
         ICard card = GameManager.Instance.CardList.GetRandomItem();
