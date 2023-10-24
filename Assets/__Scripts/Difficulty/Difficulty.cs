@@ -4,23 +4,24 @@ using UnityEngine;
 
 public class Difficulty : IDifficulty
 {
-    public string Name => throw new System.NotImplementedException();
-    public Sprite Icon => throw new System.NotImplementedException();
-    public CardParameter CardParameter => throw new System.NotImplementedException();
-    public int NumberOfParameters => throw new System.NotImplementedException();
-    public int NumberOfBombs => throw new System.NotImplementedException();
+    public string Name => _name;
+    public Sprite Icon => _icon;
+    public List<ParameterMinMax> CardParameters => _cardParameters;
+    public int NumberOfParameters => _numberOfParameters;
+    public int NumberOfBombs => _numberOfBombs;
+
 
     private string _name;
     private Sprite _icon;
-    private CardParameter _cardParameter;
+    private List<ParameterMinMax> _cardParameters;
     private int _numberOfParameters;
     private int _numberOfBombs;
    
-    public Difficulty(string name, Sprite icon, CardParameter cardParameter, int numberOfParameters, int numberOfBombs)
+    public Difficulty(string name, Sprite icon, List<ParameterMinMax> cardParameters, int numberOfParameters, int numberOfBombs)
     {
         _name = name;
         _icon = icon;
-        _cardParameter = cardParameter;
+        _cardParameters = cardParameters;
         _numberOfParameters = numberOfParameters;
         _numberOfBombs = numberOfBombs;
     }

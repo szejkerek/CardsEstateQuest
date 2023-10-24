@@ -6,8 +6,16 @@ public interface IDifficulty
 {
     string Name { get; }
     Sprite Icon { get; }
-    CardParameter CardParameter { get; }
+    List<ParameterMinMax> CardParameters { get; }
     int NumberOfParameters { get; }
     int NumberOfBombs { get; }
 
+}
+
+[System.Serializable]
+public class ParameterMinMax
+{
+    int parameter;
+    float min;
+    float max;
 }

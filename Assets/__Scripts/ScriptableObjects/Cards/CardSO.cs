@@ -7,6 +7,6 @@ public class CardSO : ScriptableObject, ICard
     [field: SerializeField] public CardFigure Figure { private set; get; }
     [field: SerializeField] public CardColor Color { private set; get; }
     [field: SerializeField] public Sprite Pictogram { private set; get; }
-    [field: SerializeField] public List<CardParameter> Parameters { private set; get; }
+    [field: SerializeField] public List<CardParameterSO> Parameters { private set; get; }
     [field: SerializeField] public GameObject Model { private set; get; }
 }

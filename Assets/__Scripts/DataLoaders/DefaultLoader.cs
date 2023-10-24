@@ -7,7 +7,7 @@ public class DefaultLoader<T> : IDataLoader<T>
 {
     public List<T> LoadCards(string path)
     {
-        object[] cards = Resources.LoadAll(path, typeof(ICard));
+        object[] cards = Resources.LoadAll(path, typeof(T));
         return cards.OfType<T>().ToList();
     }
 }

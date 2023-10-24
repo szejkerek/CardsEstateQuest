@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 41438e940ce7fe04f98b84eb75feb911, type: 3}
-  m_Name: Hard
+  m_Name: Easy
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Hard
-  <Icon>k__BackingField: {fileID: 21300000, guid: d1313c1c68524af46b8a6d08617e3bf5, type: 3}
-  <CardParameter>k__BackingField: {fileID: 0}
-  <NumberOfParameters>k__BackingField: 3
-  <NumberOfBombs>k__BackingField: 666
+  <Name>k__BackingField: Easy
+  <Icon>k__BackingField: {fileID: 21300000, guid: 156233a5d2e7cb741815e700c81cb098, type: 3}
+  <CardParameters>k__BackingField: []
+  <NumberOfParameters>k__BackingField: 34
+  <NumberOfBombs>k__BackingField: 38

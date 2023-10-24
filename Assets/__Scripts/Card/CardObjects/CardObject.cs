@@ -7,19 +7,19 @@ public class CardObject: ICard
     public CardFigure Figure => figure;
     public CardColor Color => color;
     public Sprite Pictogram => pictogram;
-    public List<CardParameter> Parameters => parameters;
+    public List<CardParameterSO> Parameters => parameters;
     public GameObject Model => model;
 
     private CardFigure figure;
     private CardColor color;
     private Sprite pictogram;
-    private List<CardParameter> parameters;
+    private List<CardParameterSO> parameters;
     private GameObject model;
 
     public CardObject(CardFigure _fiugure, 
                       CardColor _color,
                       Sprite _sprite,
-                      List<CardParameter> _cardParameters,
+                      List<CardParameterSO> _cardParameters,
                       GameObject _model)
     {
         figure = _fiugure;

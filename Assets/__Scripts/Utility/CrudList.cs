@@ -5,6 +5,7 @@ using UnityEngine;
 public class CrudList<T>
 {
     private List<T> items;
+    public int Count => items.Count;
 
     public CrudList()
     {
