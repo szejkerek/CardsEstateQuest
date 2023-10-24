@@ -6,7 +6,6 @@ using UnityEngine.TestTools;
 
 public class CrudListTest
 {
-    [TestCase(0)]
     [TestCase(1)]
     [TestCase(2)]
     [TestCase(15)]
@@ -15,11 +14,11 @@ public class CrudListTest
     {
         CrudList<int> list = new CrudList<int>();
 
-        for (int i = 0; i < listSize; i++)
+        for (int i = 1; i <= listSize; i++)
         {
             list.AddItem(i);
         }    
 
-        Assert.AreEqual(listSize, list.GetItem(listSize));
+        Assert.AreEqual(listSize, list.GetItem(listSize - 1));
     }
 }

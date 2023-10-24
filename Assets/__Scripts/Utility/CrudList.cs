@@ -18,7 +18,7 @@ public class CrudList<T>
 
     public T GetItem(int itemID)
     {
-        if (items.Count > itemID)
+        if (IsInListRange(itemID))
         {
             Debug.LogError($"Couldn't get item with id - {itemID}");
             return default;
@@ -57,5 +57,10 @@ public class CrudList<T>
         }
 
         items.RemoveAt(itemId);
+    }
+
+    private bool IsInListRange(int itemId)
+    {
+        return itemId > items.Count || itemId < 0;
     }
 }
