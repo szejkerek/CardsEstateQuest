@@ -50,7 +50,8 @@ public class CameraController : MonoBehaviour
     {
         if (_isBusy) return;
 
-        _isMoving =  context.performed;
+        _isMoving = context.started || context.performed;
+
 
     }
 
