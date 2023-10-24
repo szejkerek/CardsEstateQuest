@@ -1,3 +1,4 @@
+using System.Runtime.ConstrainedExecution;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -40,7 +41,7 @@ public class CameraController : MonoBehaviour
     {
         if (_isBusy) return;
 
-        _zoomDelta = context.ReadValue<Vector2>().y/100;
+        _zoomDelta = context.ReadValue<Vector2>().y/100 * zoomSpeed;
         _isZooming = context.started || context.performed;
 
        
@@ -59,21 +60,18 @@ public class CameraController : MonoBehaviour
     {
         if (_isMoving)
         {
-            var position = transform.right * (_delta.x * -movementSpeed);
+            Vector3 position = transform.right * (_delta.x * -movementSpeed);
             position += transform.up * (_delta.y * -movementSpeed);
             transform.position += position * Time.deltaTime;
         }
         if (_isRotating)
         {
-            transform.Rotate(new Vector3(_xRotation, -_delta.x * rotationSpeed, 0.0f));
+            transform.Rotate(new Vector3(_xRotation, -_delta.x * rotationSpeed * Time.deltaTime, 0.0f));
             transform.rotation = Quaternion.Euler(_xRotation, transform.rotation.eulerAngles.y, 0.0f);
-        }
-       
+        }      
         if (_isZooming)
         {
-            Camera.main.orthographicSize = Mathf.Clamp(Camera.main.orthographicSize - _zoomDelta, 1f, 30f);
+            Camera.main.orthographicSize = Mathf.Clamp(Camera.main.orthographicSize - _zoomDelta * Time.deltaTime, 1f, 30f);
         }
-
-
     }
 }
