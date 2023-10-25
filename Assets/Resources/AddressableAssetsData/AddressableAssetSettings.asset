@@ -79,6 +79,7 @@ MonoBehaviour:
   m_LabelTable:
     m_LabelNames:
     - default
+    - defaultCard
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: df3f33a1791ea1f43b429f3df205d326, type: 2}
