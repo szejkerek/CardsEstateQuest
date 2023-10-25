@@ -1,11 +1,14 @@
 using UnityEngine;
 
+/// <summary>
+/// Manages the creation of a grid of objects with specified properties.
+/// </summary>
 public class GridManager : MonoBehaviour
 {
-    [Header("Object Proporties")]
+    [Header("Object Properties")]
     [SerializeField] private GameObject prefab;
 
-    [Header("Grid proporties")]
+    [Header("Grid Properties")]
     [SerializeField] private Vector2Int gridSize;
     [SerializeField] private Vector2 gridSpacing;
 
@@ -14,6 +17,9 @@ public class GridManager : MonoBehaviour
         GenerateGrid();
     }
 
+    /// <summary>
+    /// Generates a grid of objects based on the specified grid properties.
+    /// </summary>
     void GenerateGrid()
     {
         for (int x = 0; x < gridSize.x; x++)

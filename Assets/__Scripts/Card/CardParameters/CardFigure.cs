@@ -1,4 +1,8 @@
 ﻿[System.Serializable]
+
+/// <summary>
+/// Represents the possible figures for playing cards.
+/// </summary>
 public enum CardFigure
 {
     Ace,
