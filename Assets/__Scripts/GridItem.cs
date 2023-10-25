@@ -15,7 +15,7 @@ public class GridItem : MonoBehaviour
 
     private void Awake()
     {
-        _renderer = GetComponent < Renderer();
+        _renderer = GetComponent < Renderer >();
 
         _initialMaterial = _renderer.material;
     }
