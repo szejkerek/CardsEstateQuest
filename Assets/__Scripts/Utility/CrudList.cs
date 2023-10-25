@@ -14,7 +14,7 @@ public class CrudList<T>
 
     public void LoadList(IDataLoader<T> loader, string path)
     {
-        items = loader.LoadCards(path);
+        items = loader.Load(path);
     }
 
     public T GetItem(int itemID)

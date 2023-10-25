@@ -14,7 +14,7 @@ public class ButtonController : MonoBehaviour
 
     private void Start()
     {
-        difficulties.LoadList(new DefaultLoader<IDifficulty>(), "Difficulty");
+        difficulties.LoadList(new DefaultLoader<IDifficulty>(), "GameData/Difficulty");
         GenerateLevelButtons();
     }
 

@@ -7,6 +7,6 @@ public interface ICard
     CardFigure Figure { get; }
     CardColor Color { get; }
     Sprite Pictogram { get; }
-    List<CardParameterSO> Parameters { get; }
+    List<ParameterValue> Parameters { get; }
     GameObject Model { get; }
 }

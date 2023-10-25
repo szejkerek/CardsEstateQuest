@@ -2,5 +2,5 @@
 
 public interface IDataLoader<T>
 {
-    public List<T> LoadCards(string path);
+    public List<T> Load(string path);
 }
