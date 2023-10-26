@@ -14,5 +14,3 @@ jobs:
 
     - name: Generate Documentation
       uses: mattnotmitt/doxygen-action@v1.9.5
-      with:
-          enable-latex: true
