@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 public class GameManager : Singleton<GameManager> 
 {
@@ -9,9 +10,11 @@ public class GameManager : Singleton<GameManager>
     public GridManager GridManager => gridManager;
     GridManager gridManager;
 
+    [SerializeField] AssetLabelReference defaultCardsLabel;
+
     private void Start()
     {
-        cardList.LoadList(new DefaultLoader<ICard>(), "GameData/DefaultCards"); 
+        cardList.LoadList(defaultCardsLabel); 
         gridManager = GetComponent<GridManager>();    
     }
 }

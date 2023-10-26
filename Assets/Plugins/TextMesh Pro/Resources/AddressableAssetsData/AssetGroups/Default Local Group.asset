@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 6ab4ea9c567eb624fbca4df8d80aaa23
+  m_SerializeEntries:
+  - m_GUID: 1b7319621088bf9498e97832fa56f741
+    m_Address: Assets/_Prefabs/Systems.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PersistentSystems
+  - m_GUID: b34694609561ab248a191c4e1bd18d57
+    m_Address: Assets/GameData/CardParameters
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CardParameters
+  - m_GUID: a7d21ed9422aef947814a2605ef43898
+    m_Address: Assets/GameData/DefaultCards
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - DefaultCards
+  - m_GUID: edd15154dee2aa3479badc4a36a83358
+    m_Address: Assets/GameData/Difficulty
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Difficulty
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 7e690ce0bb635fd4cb074dfe8573316d, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: c17b4e8df991917498dc9e491076a239, type: 2}
+    - {fileID: 11400000, guid: 2b6460d388ed7234db053f108a0ea8df, type: 2}

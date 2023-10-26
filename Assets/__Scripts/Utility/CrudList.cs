@@ -1,20 +1,27 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 public class CrudList<T>
 {
     private List<T> items;
     public int Count => items.Count;
 
+    DefaultLoader<T> loader = new DefaultLoader<T>();
     public CrudList()
     {
         items = new List<T>();   
     }
 
-    public void LoadList(IDataLoader<T> loader, string path)
+    public void LoadList(string path)
     {
         items = loader.Load(path);
+    }
+
+    public void LoadList(AssetLabelReference label)
+    {
+        items = loader.Load(label);
     }
 
     public T GetItem(int itemID)

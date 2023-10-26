@@ -2,19 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using UnityEngine.UI;
 
 public class ButtonController : MonoBehaviour
 {
     public Transform buttonContainer; 
-    public GameObject buttonPrefab; 
-
+    public GameObject buttonPrefab;
 
     CrudList<IDifficulty> difficulties = new CrudList<IDifficulty>();
+    [SerializeField] AssetLabelReference difficultyLabel;
 
     private void Start()
     {
-        difficulties.LoadList(new DefaultLoader<IDifficulty>(), "GameData/Difficulty");
+        difficulties.LoadList(difficultyLabel);
         GenerateLevelButtons();
     }
 

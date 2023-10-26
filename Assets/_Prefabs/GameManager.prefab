@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89622ca6ed3bcf64a9e45cb95c770f1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultCardsLabel:
+    m_LabelString: DefaultCards
 --- !u!114 &7659888770948953012
 MonoBehaviour:
   m_ObjectHideFlags: 0
