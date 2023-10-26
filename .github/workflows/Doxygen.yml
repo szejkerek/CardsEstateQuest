@@ -13,12 +13,6 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v2
 
-    - name: Install Graphviz
-      uses: keithmcc5/setup-graphviz@v1
-      with:
-        dot-path: true  # Add Graphviz's `dot` binary to the PATH
-        version: latest  # You can specify a specific version if needed
-
     - name: Generate Doxygen Documentation
       uses: mattnotmitt/doxygen-action@v1.9.5
       with:
