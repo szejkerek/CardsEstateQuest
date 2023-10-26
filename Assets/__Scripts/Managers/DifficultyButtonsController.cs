@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -12,9 +13,11 @@ public class DifficultyButtonsController : Singleton<DifficultyButtonsController
 
     List<DifficultyButton> difficultyButtons = new List<DifficultyButton>();
 
+    bool startPanelAnimated = false;
     private void Start()
     {
         startPanel.SetActive(false);
+        initScale = startPanel.transform.localScale;
     }
 
     public void GenerateLevelButtons(CrudList<IDifficulty> difficulties)
@@ -29,6 +32,7 @@ public class DifficultyButtonsController : Singleton<DifficultyButtonsController
 
     public void ManageSelectedButton(DifficultyButton selectedButton)
     {
+
         foreach (var button in difficultyButtons)
         {
             button.DeselectButton();
@@ -36,6 +40,19 @@ public class DifficultyButtonsController : Singleton<DifficultyButtonsController
         selectedButton.SelectButton();
 
         GameManager.Instance.SetDifficulty(selectedButton.Difficulty);
+
+        AnimateShowStartPanel();
+    }
+
+    Vector3 initScale;
+    private void AnimateShowStartPanel()
+    {
+        if (startPanelAnimated)
+            return;
+
+        startPanel.transform.localScale = Vector3.zero;
         startPanel.SetActive(true);
+        startPanel.transform.DOScale(initScale, 1f).SetEase(Ease.OutBounce);
+        startPanelAnimated = true;
     }
 }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -410,9 +410,17 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1901995450, guid: b9fa4b01acd38f84583032018af9be63, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -131
+      objectReference: {fileID: 0}
     - target: {fileID: 1988593634, guid: b9fa4b01acd38f84583032018af9be63, type: 3}
       propertyPath: m_Name
       value: Nickname
+      objectReference: {fileID: 0}
+    - target: {fileID: 1988593635, guid: b9fa4b01acd38f84583032018af9be63, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 89.999954
       objectReference: {fileID: 0}
     - target: {fileID: 2907583542667182957, guid: b9fa4b01acd38f84583032018af9be63, type: 3}
       propertyPath: m_Name
@@ -461,6 +469,26 @@ PrefabInstance:
     - target: {fileID: 6691186406636529808, guid: b9fa4b01acd38f84583032018af9be63, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6984362272662410455, guid: b9fa4b01acd38f84583032018af9be63, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6984362272662410455, guid: b9fa4b01acd38f84583032018af9be63, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 6984362272662410455, guid: b9fa4b01acd38f84583032018af9be63, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 6984362272662410455, guid: b9fa4b01acd38f84583032018af9be63, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 6984362272662410455, guid: b9fa4b01acd38f84583032018af9be63, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -269
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9fa4b01acd38f84583032018af9be63, type: 3}
