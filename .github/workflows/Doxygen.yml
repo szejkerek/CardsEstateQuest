@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - develop
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -15,10 +16,16 @@ jobs:
     - name: Generate Documentation
       uses: mattnotmitt/doxygen-action@v1.9.5
       with:
-          enable-latex: true
-    - name: Upload LaTeX artifact
+        enable-latex: true
+
+    - name: List Files
+      run: |
+        echo "Listing files in the PDF generation directory:"
+        ls -R ${{ github.workspace }}
+      shell: bash
+
+    - name: Upload PDF artifact
       uses: actions/upload-artifact@v2
       with:
-        name: latex-artifact
-        path: refman.pdf
-        
+        name: pdf-artifact
+        path: ${{ github.workspace }}/refman.pdf
