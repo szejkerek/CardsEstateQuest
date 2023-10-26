@@ -1,15 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class DifficultyButton : MonoBehaviour
 {
+    [SerializeField, Range(0f,1f)] float deselectedAlpha;
     [SerializeField] TextMeshProUGUI title;
     [SerializeField] Image image;
 
+    public IDifficulty Difficulty => difficulty;
+
     IDifficulty difficulty;
+    CanvasGroup alphaChanger;
+
+    private void Awake()
+    {
+        alphaChanger = GetComponent<CanvasGroup>();
+        GetComponent<Button>().onClick.AddListener(OnClick);
+    }
+
+    private void OnClick()
+    {
+        DifficultyButtonsController.Instance.ManageSelectedButton(this);
+    }
 
     public void SetDifficulty(IDifficulty difficulty)
     {
@@ -27,4 +40,15 @@ public class DifficultyButton : MonoBehaviour
     {
         image.sprite = icon;
     }
+    
+    public void SelectButton()
+    {
+        alphaChanger.alpha = 1;
+    }
+
+    public void DeselectButton()
+    {
+        alphaChanger.alpha = deselectedAlpha;
+    }
+
 }

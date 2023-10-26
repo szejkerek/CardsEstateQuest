@@ -13,6 +13,7 @@ public class MainMenuManager : Singleton<MainMenuManager>
     private void Start()
     {
         buttonController = GetComponent<DifficultyButtonsController>();
+
         difficulties.LoadList(difficultyLabel);
 
         buttonController.GenerateLevelButtons(difficulties);
