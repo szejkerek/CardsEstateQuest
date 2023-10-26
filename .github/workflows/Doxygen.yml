@@ -1,4 +1,4 @@
-name: Generate Doxygen Documentation
+name: Generate and Upload Doxygen Documentation
 
 on:
   push:
@@ -6,25 +6,27 @@ on:
       - develop
 
 jobs:
-  build:
+  generate-documentation:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
+    - name: Checkout Repository
       uses: actions/checkout@v2
 
-    - name: Generate Documentation
+    - name: Install Graphviz
+      uses: keithmcc5/setup-graphviz@v1
+      with:
+        dot-path: true  # Add Graphviz's `dot` binary to the PATH
+        version: latest  # You can specify a specific version if needed
+
+    - name: Generate Doxygen Documentation
       uses: mattnotmitt/doxygen-action@v1.9.5
       with:
         enable-latex: true
+        working-directory: ${{ github.workspace }}/Doxyfile
+        additional-packages: font-fira-code
 
-    - name: List Files
-      run: |
-        echo "Listing files in the PDF generation directory:"
-        ls -R ${{ github.workspace }}
-      shell: bash
-
-    - name: Upload PDF artifact
+    - name: Upload PDF Documentation
       uses: actions/upload-artifact@v2
       with:
         name: pdf-artifact
