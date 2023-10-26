@@ -15,7 +15,4 @@ jobs:
     - name: Generate Documentation
       uses: mattnotmitt/doxygen-action@v1.9.5
       with:
-          additional-packages: font-fira-code
-          working-directory: 'Assets/'
-          doxyfile-path: 'docs/Doxygen'
           enable-latex: true
