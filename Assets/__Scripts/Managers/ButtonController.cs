@@ -7,28 +7,19 @@ using UnityEngine.UI;
 
 public class ButtonController : MonoBehaviour
 {
-    public Transform buttonContainer; 
+    public Transform buttonContainer;
     public GameObject buttonPrefab;
 
-    CrudList<IDifficulty> difficulties = new CrudList<IDifficulty>();
-    [SerializeField] AssetLabelReference difficultyLabel;
-
-    private void Start()
-    {
-        difficulties.LoadList(difficultyLabel);
-        GenerateLevelButtons();
-    }
-
-    void GenerateLevelButtons()
+    public void GenerateLevelButtons(CrudList<IDifficulty> difficulties)
     {
         for (int i = 0; i < difficulties.Count; i++)
         {
             GameObject button = Instantiate(buttonPrefab, buttonContainer);
-            button.GetComponentInChildren<TMP_Text>().text = difficulties.GetItem(i).Name;
-
             Transform childTransform = button.transform.Find("Image");
             Image childImage = childTransform.GetComponent<Image>();
-            childImage.sprite = difficulties.GetItem(i).Icon; 
+
+            childImage.sprite = difficulties.GetItem(i).Icon;
+            button.GetComponentInChildren<TMP_Text>().text = difficulties.GetItem(i).Name;
         }
     }
 }

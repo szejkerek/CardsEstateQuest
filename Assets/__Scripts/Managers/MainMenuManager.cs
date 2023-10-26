@@ -1,12 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.AddressableAssets;
 
 public class MainMenuManager : Singleton<MainMenuManager>
 {
+    DifficultyButtonsController buttonController;
     [SerializeField] private TMP_InputField nicknameInput;
+
+    CrudList<IDifficulty> difficulties = new CrudList<IDifficulty>();
+    [SerializeField] AssetLabelReference difficultyLabel;
+
+    private void Start()
+    {
+        buttonController = GetComponent<DifficultyButtonsController>();
+        difficulties.LoadList(difficultyLabel);
+
+        buttonController.GenerateLevelButtons(difficulties);
+    }
+
     public void StartGame()
     {
         string nickname = nicknameInput.text;
