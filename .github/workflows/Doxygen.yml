@@ -1,4 +1,4 @@
-name: Generate and Upload Doxygen Documentation
+name: Generate Doxygen Documentation
 
 on:
   push:
@@ -6,20 +6,19 @@ on:
       - develop
 
 jobs:
-  generate-documentation:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Repository
+    - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Generate Doxygen Documentation
+    - name: Generate Documentation
       uses: mattnotmitt/doxygen-action@v1.9.5
       with:
         enable-latex: true
-        additional-packages: font-fira-code
 
-    - name: Upload PDF Documentation
+    - name: Upload PDF artifact
       uses: actions/upload-artifact@v2
       with:
         name: pdf-artifact
