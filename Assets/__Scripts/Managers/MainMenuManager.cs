@@ -17,6 +17,6 @@ public class MainMenuManager : Singleton<MainMenuManager>
         }
         PlayerPrefs.SetString("nickname", nickname);
 
-        SceneManager.LoadSceneAsync(1);
+        SceneLoader.Instance.LoadScene(SceneEnum.Gameplay);
     }
 }

@@ -1,20 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
 
-public class GameManager : Singleton<GameManager> 
+public class GameManager : MonoBehaviour
 {
-    public CrudList<ICard> CardList => cardList;
-    CrudList<ICard> cardList = new CrudList<ICard>();    
-    public GridManager GridManager => gridManager;
-    GridManager gridManager;
-
-    [SerializeField] AssetLabelReference defaultCardsLabel;
-
-    private void Start()
+    // Start is called before the first frame update
+    void Start()
     {
-        cardList.LoadList(defaultCardsLabel); 
-        gridManager = GetComponent<GridManager>();    
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
     }
 }
