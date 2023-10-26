@@ -1,5 +1,2 @@
 PROJECT_NAME = CardsEstateQuest
-INPUT = .
-OUTPUT_DIRECTORY = doc
-GENERATE_LATEX = YES
-LATEX_OUTPUT = latex
+INPUT = ./CardsEstateQuest/
