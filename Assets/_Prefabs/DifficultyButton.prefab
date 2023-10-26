@@ -243,8 +243,8 @@ GameObject:
   - component: {fileID: 1501909732398460096}
   - component: {fileID: 624348402370551286}
   - component: {fileID: 5119292176898119586}
-  - component: {fileID: -3957909733817726690}
   - component: {fileID: 1668390144840497886}
+  - component: {fileID: -3957909733817726690}
   m_Layer: 5
   m_Name: DifficultyButton
   m_TagString: Untagged
@@ -393,6 +393,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!225 &1668390144840497886
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6384262370788490852}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!114 &-3957909733817726690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -408,15 +420,3 @@ MonoBehaviour:
   deselectedAlpha: 0.407
   title: {fileID: 150595010327895454}
   image: {fileID: 4008138532751482606}
---- !u!225 &1668390144840497886
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6384262370788490852}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
