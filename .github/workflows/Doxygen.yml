@@ -28,4 +28,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: pdf-artifact
-        path: ${{ github.workspace }}/refman.pdf
+        path: ${{ github.workspace }}/doc/latex/refman.pdf
