@@ -12,27 +12,8 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Create Doxyfile
-      run: |
-        echo "PROJECT_NAME = CardsEstateQuest" > Doxyfile
-        echo "INPUT = ." >> Doxyfile
-        echo "OUTPUT_DIRECTORY = doc" >> Doxyfile
-        echo "GENERATE_LATEX = YES" >> Doxyfile
-        echo "LATEX_OUTPUT = latex" >> Doxyfile
-        # Add other Doxygen settings as needed
-
-    - name: Commit and Push Doxyfile
-      run: |
-        git config --global user.email "your-email@example.com"
-        git config --global user.name "Your Name"
-        git add Doxyfile
-        git commit -m "Add Doxyfile"
-        git push
-      env:
-        # Set your Git credentials
-        GIT_USER: ${{ secrets.GITHUB_ACTOR }}
-        GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-
     - name: Generate Documentation
       uses: mattnotmitt/doxygen-action@v1.9.5
+      with:
+          enable-latex: true
+      
