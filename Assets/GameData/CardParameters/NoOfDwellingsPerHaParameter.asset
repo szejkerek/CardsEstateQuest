@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 559107df035a4774e8cf586decca9b75, type: 3}
   m_Name: NoOfDwellingsPerHaParameter
   m_EditorClassIdentifier: 
-  <Icon>k__BackingField: {fileID: 0}
+  <Icon>k__BackingField: {fileID: 21300000, guid: 67c3c3b19f0664a409038693cb277c94, type: 3}
   <Category>k__BackingField: No. of Dwellings per Ha
+  <ValueType>k__BackingField: 1
