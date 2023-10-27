@@ -1,8 +1,6 @@
 using DG.Tweening;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class DifficultyButtonsController : Singleton<DifficultyButtonsController>
 {
@@ -20,7 +18,7 @@ public class DifficultyButtonsController : Singleton<DifficultyButtonsController
         initScale = startPanel.transform.localScale;
     }
 
-    public void GenerateLevelButtons(CrudList<IDifficulty> difficulties)
+    public void GenerateLevelButtons(CrudList<Difficulty> difficulties)
     {
         for (int i = 0; i < difficulties.Count; i++)
         {

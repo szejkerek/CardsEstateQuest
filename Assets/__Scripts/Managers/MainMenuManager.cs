@@ -7,16 +7,29 @@ public class MainMenuManager : Singleton<MainMenuManager>
     DifficultyButtonsController buttonController;
     [SerializeField] private TMP_InputField nicknameInput;
 
-    CrudList<IDifficulty> difficulties = new CrudList<IDifficulty>();
+    CrudList<Difficulty> difficulties = new CrudList<Difficulty>();
     [SerializeField] AssetLabelReference difficultyLabel;
 
     private void Start()
     {
         buttonController = GetComponent<DifficultyButtonsController>();
 
-        difficulties.LoadList(difficultyLabel);
-
+        LoadDifficulties();
         buttonController.GenerateLevelButtons(difficulties);
+    }
+
+    private void LoadDifficulties()
+    {
+        CrudList<IDifficulty> tempDifficulties = new CrudList<IDifficulty>();
+        tempDifficulties.LoadList(difficultyLabel);
+        foreach (var difficulty in tempDifficulties)
+        {
+            Difficulty tempDiff = new Difficulty(difficulty);
+            if (tempDiff.IsValid())
+            {
+                difficulties.AddItem(tempDiff);
+            }
+        }
     }
 
     public void StartGame()

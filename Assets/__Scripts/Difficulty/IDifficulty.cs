@@ -7,7 +7,5 @@ public interface IDifficulty
     string Name { get; }
     Sprite Icon { get; }
     List<ParameterRule> CardParameters { get; }
-    int NumberOfParameters { get; }
     int NumberOfBombs { get; }
-
 }

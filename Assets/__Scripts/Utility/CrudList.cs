@@ -1,9 +1,11 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
-public class CrudList<T>
+public class CrudList<T> : IEnumerable<T>
 {
     private List<T> items;
     public int Count => items.Count;
@@ -11,7 +13,7 @@ public class CrudList<T>
     DefaultLoader<T> loader = new DefaultLoader<T>();
     public CrudList()
     {
-        items = new List<T>();   
+        items = new List<T>();
     }
 
     public void LoadList(string path)
@@ -36,7 +38,7 @@ public class CrudList<T>
 
     public T GetRandomItem()
     {
-        int index = Random.Range(0, items.Count);
+        int index = UnityEngine.Random.Range(0, items.Count);
         return items[index];
     }
 
@@ -47,7 +49,7 @@ public class CrudList<T>
 
     public void UpdateItem(T newItem, int cardId)
     {
-        if (items != null || items.Count > cardId)
+        if (IsInListRange(cardId))
         {
             Debug.LogError($"Couldn't update item with id - {cardId}");
             return;
@@ -58,7 +60,7 @@ public class CrudList<T>
 
     public void RemoveItem(int itemId)
     {
-        if (items != null || items.Count > itemId)
+        if (IsInListRange(itemId))
         {
             Debug.LogError($"Couldn't remove item with id - {itemId}");
             return;
@@ -67,8 +69,33 @@ public class CrudList<T>
         items.RemoveAt(itemId);
     }
 
+    public void Remove(T item)
+    {
+        int index = items.IndexOf(item);
+        if (index != -1)
+        {
+            items.RemoveAt(index);
+        }
+        else
+        {
+            Debug.LogError("Item not found in the list.");
+        }
+
+    }
+
     private bool IsInListRange(int itemId)
     {
-        return itemId > items.Count || itemId < 0;
+        return itemId < 0 || itemId >= items.Count;
+    }
+
+    // Implement IEnumerable<T> to enable foreach
+    public IEnumerator<T> GetEnumerator()
+    {
+        return items.GetEnumerator();
+    }
+
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        return GetEnumerator();
     }
 }
