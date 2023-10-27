@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,19 +12,33 @@ public class ParameterGoal : MonoBehaviour
     [SerializeField] TextMeshProUGUI MaxValue;
     [SerializeField] TextMeshProUGUI ValueInfo;
 
-    private void SetUpUI(ParameterRule parameterRule)
+    public ParameterRule ParameterRule => parameterRule;
+    ParameterRule parameterRule;
+
+    public float Value => value;
+    float value;
+
+    public void UpdateParameter(float addValue)
     {
+        value += addValue;
+    }
+
+    public void SetUp(ParameterRule parameterRule)
+    {
+        this.parameterRule = parameterRule;
+        value = 0;
+
         if(parameterRule.TryGetIcon(out var icon))
         {
             Icon.sprite = icon;
-            Name.text = string.Empty;
+            Name.gameObject.SetActive(false);
         }
         else
         {
             Icon.sprite = null;
+            Icon.gameObject.SetActive(false);
             Name.text = $"Name: {parameterRule.GetCategory()}";
         }
-
         CurrentValue.text = $"CurrentValue: {0}";
         MinValue.text = $"Min Value: {parameterRule.MinValue}";
         MaxValue.text = $"Max Value: {parameterRule.MaxValue}";

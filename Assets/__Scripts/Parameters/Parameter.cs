@@ -12,7 +12,7 @@ public class Parameter
 
     public bool TryGetIcon(out Sprite icon)
     {
-        if (_categorySO != null)
+        if (_categorySO != null && _categorySO.Icon != null)
         {
             icon = _categorySO.Icon;
             return true;
