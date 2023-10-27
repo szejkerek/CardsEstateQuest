@@ -10,6 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 559107df035a4774e8cf586decca9b75, type: 3}
-  m_Name: CardParameter
+  m_Name: GrossSpaceIndexParameter
   m_EditorClassIdentifier: 
-  <Category>k__BackingField: Development intensity
+  <Icon>k__BackingField: {fileID: 21300000, guid: 0dccfe7ab20bd0c478c54fe5a8598d6c, type: 3}
+  <Category>k__BackingField: Gross Space Index

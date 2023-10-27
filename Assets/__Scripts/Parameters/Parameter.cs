@@ -9,6 +9,15 @@ public class Parameter
     {
         _category = category;
     }
+    public ParameterTypeEnum GetValueType()
+    {
+        if (_categorySO != null)
+        {
+            return _categorySO.ValueType;
+        }
+
+        return ParameterTypeEnum.Decimal;
+    }
 
     public bool TryGetIcon(out Sprite icon)
     {

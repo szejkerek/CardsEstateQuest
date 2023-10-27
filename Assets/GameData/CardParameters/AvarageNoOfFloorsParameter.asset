@@ -10,6 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 559107df035a4774e8cf586decca9b75, type: 3}
-  m_Name: CardParameter 2
+  m_Name: AvarageNoOfFloorsParameter
   m_EditorClassIdentifier: 
-  <Category>k__BackingField: Average number of floors
+  <Icon>k__BackingField: {fileID: 21300000, guid: 62fa450b8b1e6814ba0eac3d52cba7b0, type: 3}
+  <Category>k__BackingField: Average Number of Floors
