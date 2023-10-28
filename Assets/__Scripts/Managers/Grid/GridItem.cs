@@ -20,8 +20,9 @@ public class GridItem : MonoBehaviour
         if (!hoversOver || isTaken)
             return;
 
-        ICard card = GameplayManager.Instance.CardList.GetRandomItem();
+        CardObject card = new CardObject(GameplayManager.Instance.CardList.GetRandomItem());
         Instantiate(card.Model, transform.position, transform.rotation);
+        card.OnCardPlaced();
         ParameterGoalManager.Instance.UpdateGlobalParameters(card.Parameters);
         isTaken = true;
     }

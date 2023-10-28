@@ -2,7 +2,7 @@
 using UnityEngine;
 
 [System.Serializable]
-public class CardObject: ICard
+public class CardObject : ICard
 {
     public CardFigure Figure => figure;
     public CardColor Color => color;
@@ -16,7 +16,7 @@ public class CardObject: ICard
     private List<ParameterValue> parameters;
     private GameObject model;
 
-    public CardObject(CardFigure _fiugure, 
+    public CardObject(CardFigure _fiugure,
                       CardColor _color,
                       Sprite _sprite,
                       List<ParameterValue> _cardParameters,
@@ -27,5 +27,24 @@ public class CardObject: ICard
         pictogram = _sprite;
         parameters = _cardParameters;
         model = _model;
+    }
+
+    public CardObject(ICard card)
+    {
+        figure = card.Figure;
+        color = card.Color;
+        pictogram = card.Pictogram;
+        parameters = card.Parameters;
+        model = card.Model;
+    }
+
+    public void OnCardPlaced()
+    {
+        ParameterGoalManager.Instance.UpdateGlobalParameters(Parameters);
+        Debug.Log("Placed");
+    }
+    public void OnCardDestroyed()
+    {
+        Debug.Log("Destroyed");
     }
 }
