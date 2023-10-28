@@ -22,6 +22,7 @@ public class GridItem : MonoBehaviour
 
         ICard card = GameplayManager.Instance.CardList.GetRandomItem();
         Instantiate(card.Model, transform.position, transform.rotation);
+        ParameterGoalManager.Instance.UpdateGlobalParameters(card.Parameters);
         isTaken = true;
     }
 

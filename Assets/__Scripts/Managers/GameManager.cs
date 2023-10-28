@@ -11,11 +11,12 @@ public class GameManager : Singleton<GameManager>
 
     private void Start()
     {
-        difficulty = defaultDifficulty;
+        SetDifficulty(defaultDifficulty);
     }
 
     public void SetDifficulty(IDifficulty difficulty)
     {
         this.difficulty = difficulty;
+        Debug.Log($"Difficulty set to {difficulty.Name}!");
     }
 }

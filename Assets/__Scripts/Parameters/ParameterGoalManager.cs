@@ -8,28 +8,36 @@ public class ParameterGoalManager : Singleton<ParameterGoalManager>
     [SerializeField] RectTransform goalsContainer;
     [SerializeField] ParameterGoal goalsPrefab;
 
-    Dictionary<string, ParameterGoal> m_parameterGoals;
+    Dictionary<string, ParameterGoal> parameterGoals = new Dictionary<string, ParameterGoal>();
 
     private void Start()
     {
         SetupParameters();
     }
 
-    private void SetupParameters()
+    void SetupParameters()
     {
         IDifficulty difficulty = GameManager.Instance.Difficulty;
         foreach(var paramRule in difficulty.CardParameters) 
         {
             ParameterGoal goal = Instantiate(goalsPrefab, goalsContainer);
-            goal.SetUp(paramRule);
+            goal.Init(paramRule);
+            parameterGoals.Add(paramRule.GetCategory(), goal);
         }
     }
 
-    void UpdateGoals()
+    public void UpdateGlobalParameters(List<ParameterValue> cardValues, bool cardDestroyed = false)
     {
-        foreach (var parameter in m_parameterGoals)
+        foreach (var parameter in parameterGoals)
         {
-            parameter.Value.UpdateParameter(1);
+            foreach(var paramValue in cardValues)
+            {
+                if(paramValue.GetCategory() == parameter.Key)
+                {
+                    parameter.Value.UpdateParameter(paramValue.Value, cardDestroyed);
+                    break;
+                }
+            }
         }
     }
 }

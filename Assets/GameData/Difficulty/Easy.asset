@@ -16,9 +16,21 @@ MonoBehaviour:
   <Icon>k__BackingField: {fileID: 21300000, guid: 156233a5d2e7cb741815e700c81cb098, type: 3}
   <CardParameters>k__BackingField:
   - _categorySO: {fileID: 11400000, guid: 12c031012ad53d04686b1d4309213ca0, type: 2}
-    maxValue: 0.28
-    minValue: 0.93
+    minValue: 1
+    maxValue: 4
+  - _categorySO: {fileID: 11400000, guid: 3b2397d0a2367714594dcf43ef07a21c, type: 2}
+    minValue: 0
+    maxValue: 0
+  - _categorySO: {fileID: 11400000, guid: c596fec365df5fe4da8f17240d65c4f3, type: 2}
+    minValue: 0
+    maxValue: 0
   - _categorySO: {fileID: 11400000, guid: a17ade7fd8e35b14fb053738126533a8, type: 2}
-    maxValue: 0.28
-    minValue: 0.93
+    minValue: 0
+    maxValue: 0
+  - _categorySO: {fileID: 11400000, guid: 573e3caa74a04814e9d843096cd68cbf, type: 2}
+    minValue: 0
+    maxValue: 0
+  - _categorySO: {fileID: 11400000, guid: 71e7d46cfbad04145b5cbd56b3016ad9, type: 2}
+    minValue: 0
+    maxValue: 0
   <NumberOfBombs>k__BackingField: 38

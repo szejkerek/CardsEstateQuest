@@ -4,15 +4,14 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HudManager : MonoBehaviour
+public class HudManager : Singleton<HudManager>
 {
-    [SerializeField] DifficultySO m_DifficultySO;
     [Header("UI")]
     [SerializeField] TextMeshProUGUI nicknameText;
     [SerializeField] TextMeshProUGUI bombsLeftText;
     [SerializeField] Image difficultyIcon;
 
-    private void Awake()
+    private void Start()
     {
         UpdateHud();
     }
@@ -21,9 +20,7 @@ public class HudManager : MonoBehaviour
     {
         string nickname = PlayerPrefs.GetString("nickname");
         nicknameText.text = nickname;
-
-        bombsLeftText.text = m_DifficultySO.NumberOfBombs.ToString();
-
-        difficultyIcon.sprite = m_DifficultySO.Icon;
+        bombsLeftText.text = GameManager.Instance.Difficulty.NumberOfBombs.ToString();
+        difficultyIcon.sprite = GameManager.Instance.Difficulty.Icon;
     }
 }
