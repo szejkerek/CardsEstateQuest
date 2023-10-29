@@ -5,7 +5,8 @@ using UnityEngine;
 public enum SceneEnum
 {
     MainMenu,
-    Gameplay
+    Gameplay,
+    EndMenu
 }
 
 

@@ -25,4 +25,13 @@ public class GridManager : MonoBehaviour
             }
         }
     }
+    public Vector3 GetMinBoundary()
+    {
+        return new Vector3(0, 0, 0); 
+    }
+
+    public Vector3 GetMaxBoundary()
+    {
+        return new Vector3((gridSize.x-1) * gridSpacing.x , 0, (gridSize.y - 1) * gridSpacing.y); 
+    }
 }

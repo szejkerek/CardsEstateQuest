@@ -21,9 +21,11 @@ public class GridItem : MonoBehaviour
             return;
 
         CardObject card = new CardObject(GameplayManager.Instance.CardList.GetRandomItem());
-        Instantiate(card.Model, transform.position, transform.rotation);
+        GameObject building = Instantiate(card.Model, transform.position, transform.rotation);
         card.OnCardPlaced();
         ParameterGoalManager.Instance.UpdateGlobalParameters(card.Parameters);
+        Transform meshChild = building.transform.Find("Mesh");
+        meshChild.gameObject.AddComponent<BoxCollider>();
         isTaken = true;
     }
 

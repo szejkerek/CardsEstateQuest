@@ -15,6 +15,10 @@ public class GameplayManager : Singleton<GameplayManager>
     private void Start()
     {
         cardList.LoadList(defaultCardsLabel); 
-        gridManager = GetComponent<GridManager>();    
+        gridManager = GetComponent<GridManager>();        
+    }
+    public void LoadEndMenu()
+    {
+        SceneLoader.Instance.LoadScene(SceneEnum.EndMenu);
     }
 }
