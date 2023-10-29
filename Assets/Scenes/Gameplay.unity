@@ -500,7 +500,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.23911765, y: 0.3696438, z: -0.09904577, w: 0.89239913}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -19.16, y: 17.83, z: -20.72}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -554,6 +554,11 @@ MonoBehaviour:
   movementSpeed: 2.09
   rotationSpeed: 2.52
   zoomSpeed: 50
+--- !u!4 &2055559526 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8426006572340489954, guid: f6e76cb27882cde43a4d8180df37a8d0, type: 3}
+  m_PrefabInstance: {fileID: 6858865119769099133}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6858865119769099133
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -725,22 +730,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6234364196679634020, guid: f6e76cb27882cde43a4d8180df37a8d0, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6234364196679634020, guid: f6e76cb27882cde43a4d8180df37a8d0, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6234364196679634020, guid: f6e76cb27882cde43a4d8180df37a8d0, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6234364196679634020, guid: f6e76cb27882cde43a4d8180df37a8d0, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6858865119598840144, guid: f6e76cb27882cde43a4d8180df37a8d0, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -790,12 +779,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7659888770948953012, guid: f6e76cb27882cde43a4d8180df37a8d0, type: 3}
-      propertyPath: gridSize.x
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7659888770948953012, guid: f6e76cb27882cde43a4d8180df37a8d0, type: 3}
-      propertyPath: gridSize.y
-      value: 8
-      objectReference: {fileID: 0}
+      propertyPath: gridContainer
+      value: 
+      objectReference: {fileID: 2055559526}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6e76cb27882cde43a4d8180df37a8d0, type: 3}

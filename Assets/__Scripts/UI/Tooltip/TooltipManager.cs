@@ -19,13 +19,13 @@ public class TooltipManager : Singleton<TooltipManager>
         {
             StopCoroutine(showCoroutine);
         }
-        tooltip.gameObject.SetActive(false);
+        tooltip.Hide();
     }
 
     private IEnumerator ShowWithDelay(string content, string header)
     {
         yield return new WaitForSeconds(delay);
         tooltip.SetText(content, header);
-        tooltip.gameObject.SetActive(true);
+        tooltip.Show();
     }
 }

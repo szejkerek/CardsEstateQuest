@@ -6,6 +6,7 @@ public class GridManager : MonoBehaviour
     [SerializeField] private GameObject prefab;
 
     [Header("Grid proporties")]
+    [SerializeField] private Transform gridContainer;
     [SerializeField] private Vector2Int gridSize;
     [SerializeField] private Vector2 gridSpacing;
 
@@ -21,7 +22,8 @@ public class GridManager : MonoBehaviour
             for (int y = 0; y < gridSize.y; y++)
             {
                 Vector3 spawnPosition = new Vector3(x * gridSpacing.x, 0, y * gridSpacing.y);
-                Instantiate(prefab, spawnPosition, Quaternion.identity);
+                GameObject obj = Instantiate(prefab, spawnPosition, Quaternion.identity);
+                obj.transform.parent = gridContainer;
             }
         }
     }

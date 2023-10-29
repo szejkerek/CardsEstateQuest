@@ -13,7 +13,19 @@ public class Tooltip : MonoBehaviour
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
-        gameObject.SetActive(false);
+        Hide();
+    }
+
+    public void Show()
+    {
+        headerField.gameObject.SetActive(true);
+        contentField.gameObject.SetActive(true);
+    }
+
+    public void Hide()
+    {
+        headerField.gameObject.SetActive(false);
+        contentField.gameObject.SetActive(false);
     }
 
     public void SetText(string content, string header = "")
