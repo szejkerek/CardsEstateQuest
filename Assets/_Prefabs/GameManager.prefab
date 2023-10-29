@@ -1189,6 +1189,7 @@ GameObject:
   - component: {fileID: 1645945313}
   - component: {fileID: 1645945315}
   - component: {fileID: 1645945314}
+  - component: {fileID: 8562742402092205570}
   m_Layer: 5
   m_Name: BombIcon
   m_TagString: Untagged
@@ -1253,6 +1254,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8562742402092205570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1645945312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cec985901b6f59f4baec76a09429f7c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  header: Bombs left
+  content: 
 --- !u!1 &1779490247
 GameObject:
   m_ObjectHideFlags: 0
@@ -1694,6 +1709,36 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &6579246715907522346
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8426006572340489954}
+  m_Layer: 0
+  m_Name: GridContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8426006572340489954
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6579246715907522346}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6858865119598840146}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6858865119598840144
 GameObject:
   m_ObjectHideFlags: 0
@@ -1726,6 +1771,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 560081414}
+  - {fileID: 8426006572340489954}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1756,7 +1802,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 2097753518464822301, guid: 32d13ee0d68da9b468f55b78f789d0e9, type: 3}
-  gridSize: {x: 3, y: 3}
+  gridSize: {x: 8, y: 8}
   gridSpacing: {x: 5, y: 5}
 --- !u!114 &5470280096728946927
 MonoBehaviour:
@@ -1770,7 +1816,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3943719ece7fff14d842d1c80658170c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_DifficultySO: {fileID: 11400000, guid: dc3b35aa06cb1124eb27ad16a5aea22e, type: 2}
   nicknameText: {fileID: 441005107}
   bombsLeftText: {fileID: 515225914}
   difficultyIcon: {fileID: 363600318}
