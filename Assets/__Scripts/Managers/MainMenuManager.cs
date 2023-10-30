@@ -44,4 +44,9 @@ public class MainMenuManager : Singleton<MainMenuManager>
 
         SceneLoader.Instance.LoadScene(SceneEnum.Gameplay);
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }

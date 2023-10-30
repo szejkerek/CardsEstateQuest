@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float moveSpeed;
 
     [SerializeField] private Transform orientation;
-    [SerializeField] GameObject playerCamera;
+    [SerializeField] private GameObject playerCamera;
 
     private float horizontalInput;
     private float verticalInput;

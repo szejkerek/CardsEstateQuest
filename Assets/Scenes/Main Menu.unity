@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -399,6 +399,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &1644580989 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4269205444699379674, guid: b9fa4b01acd38f84583032018af9be63, type: 3}
+  m_PrefabInstance: {fileID: 422765439114264364}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8974284d4fa2dfe4e84baf1f7ff7decb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &422765439114264364
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -489,6 +500,34 @@ PrefabInstance:
     - target: {fileID: 6984362272662410455, guid: b9fa4b01acd38f84583032018af9be63, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -269
+      objectReference: {fileID: 0}
+    - target: {fileID: 7714530005975273213, guid: b9fa4b01acd38f84583032018af9be63, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7714530005975273213, guid: b9fa4b01acd38f84583032018af9be63, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7714530005975273213, guid: b9fa4b01acd38f84583032018af9be63, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1644580989}
+    - target: {fileID: 7714530005975273213, guid: b9fa4b01acd38f84583032018af9be63, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7714530005975273213, guid: b9fa4b01acd38f84583032018af9be63, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: QuitGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 7714530005975273213, guid: b9fa4b01acd38f84583032018af9be63, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MainMenuManager, Scripts
+      objectReference: {fileID: 0}
+    - target: {fileID: 7714530005975273213, guid: b9fa4b01acd38f84583032018af9be63, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9fa4b01acd38f84583032018af9be63, type: 3}
