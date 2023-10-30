@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8252860980485896260}
   - component: {fileID: 1962453046105615338}
   - component: {fileID: 8057625489936757527}
-  - component: {fileID: 6868673362655433587}
   m_Layer: 0
   m_Name: Hospital
   m_TagString: Untagged
@@ -83,19 +82,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6868673362655433587
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8277453645499062384}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &7863565594839715979
 PrefabInstance:
   m_ObjectHideFlags: 0
