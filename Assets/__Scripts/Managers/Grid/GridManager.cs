@@ -36,4 +36,18 @@ public class GridManager : MonoBehaviour
     {
         return new Vector3((gridSize.x-1) * gridSpacing.x , 0, (gridSize.y - 1) * gridSpacing.y); 
     }
+
+    // Draw Gizmos for the min and max boundaries
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(GetMinBoundary() + GetMaxBoundary() * 0.5f, GetMaxBoundary() - GetMinBoundary());
+    }
+
+    // Draw Gizmos only when the object is selected
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireCube(GetMinBoundary() + GetMaxBoundary() * 0.5f, GetMaxBoundary() - GetMinBoundary());
+    }
 }
