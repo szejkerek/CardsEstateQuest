@@ -7,14 +7,12 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movement")]
     [SerializeField] private float moveSpeed;
 
-
     [SerializeField] private Transform orientation;
-
-    [SerializeField] GridManager gridManager;
     [SerializeField] GameObject playerCamera;
 
     private float horizontalInput;
     private float verticalInput;
+    GridManager gridManager;
 
     Vector3 moveDirection;
 
@@ -23,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        gridManager = FindObjectOfType<GridManager>();
         rb.freezeRotation = true;
     }
     private void Update()
