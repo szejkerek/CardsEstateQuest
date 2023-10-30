@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class GameManager : Singleton<GameManager>
 {
+    [SerializeField] DifficultySO defaultDifficulty;
+      
     public IDifficulty Difficulty => difficulty;
     IDifficulty difficulty;
 
-    [SerializeField] DifficultySO defaultDifficulty;
 
     private void Start()
     {
@@ -19,4 +20,5 @@ public class GameManager : Singleton<GameManager>
         this.difficulty = difficulty;
         Debug.Log($"Difficulty set to {difficulty.Name}!");
     }
+
 }

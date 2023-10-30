@@ -9,6 +9,8 @@ public class GameplayManager : Singleton<GameplayManager>
     CrudList<ICard> cardList = new CrudList<ICard>();    
     public GridManager GridManager => gridManager;
     GridManager gridManager;
+    public CardObject SelectedCard => selectedCard;
+    CardObject selectedCard;
 
     [SerializeField] AssetLabelReference defaultCardsLabel;
 
@@ -21,4 +23,16 @@ public class GameplayManager : Singleton<GameplayManager>
     {
         SceneLoader.Instance.LoadScene(SceneEnum.EndMenu);
     }
+
+    public void SelectCard()
+    {
+        selectedCard = new CardObject(CardList.GetRandomItem());
+        Debug.Log(selectedCard.Model.name + " card selected");
+    }
+
+    public void DeselectCard()
+    {
+        selectedCard = null;
+    }
+
 }

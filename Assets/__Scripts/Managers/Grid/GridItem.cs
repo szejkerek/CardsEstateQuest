@@ -7,25 +7,24 @@ public class GridItem : MonoBehaviour
     Material _initalMateral;
     Renderer _renderer;
     bool hoversOver = false;
+    GameplayManager manager;
 
-    private void Awake()
+    private void Start()
     {
         _renderer = GetComponent<Renderer>();
-
+        manager = GameplayManager.Instance;
         _initalMateral = _renderer.material;
     }
 
     private void OnMouseDown()
     {
-        if (!hoversOver || isTaken)
+        if (!hoversOver || isTaken || manager.SelectedCard == null)
             return;
 
-        CardObject card = new CardObject(GameplayManager.Instance.CardList.GetRandomItem());
+        CardObject card = manager.SelectedCard;
+
         GameObject building = Instantiate(card.Model, transform.position, transform.rotation);
-        card.OnCardPlaced();
-        ParameterGoalManager.Instance.UpdateGlobalParameters(card.Parameters);
-        Transform meshChild = building.transform.Find("Mesh");
-        meshChild.gameObject.AddComponent<BoxCollider>();
+        card.OnCardPlaced(building);
         isTaken = true;
     }
 

@@ -38,9 +38,15 @@ public class CardObject : ICard
         model = card.Model;
     }
 
-    public void OnCardPlaced()
+    public void OnCardPlaced(GameObject buildingInstance)
     {
-        ParameterGoalManager.Instance.UpdateGlobalParameters(Parameters);
+        Transform meshChild = buildingInstance.transform.Find("Mesh"); //String yikes TODO: Zmienić na referencje na postawie modelu
+
+        MeshCollider mesh = meshChild.gameObject.AddComponent<MeshCollider>();
+        mesh.convex = true;
+
+        ParameterGoalManager.Instance.UpdateGlobalParameters(parameters);
+        GameplayManager.Instance.DeselectCard();
         Debug.Log("Placed");
     }
     public void OnCardDestroyed()
