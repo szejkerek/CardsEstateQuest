@@ -831,7 +831,7 @@ GameObject:
   - component: {fileID: 1408025536}
   - component: {fileID: 1408025539}
   - component: {fileID: 1408025538}
-  - component: {fileID: 1408025537}
+  - component: {fileID: 7462047136091391376}
   m_Layer: 5
   m_Name: Walk
   m_TagString: Untagged
@@ -896,7 +896,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &1408025537
+--- !u!114 &7462047136091391376
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -905,7 +905,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1408025535}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Script: {fileID: 11500000, guid: 33985591f0bff0747a5d4373015a01e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
@@ -915,7 +915,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -952,6 +952,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onInteractionFinished:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1645945312
 GameObject:
   m_ObjectHideFlags: 0
@@ -1053,7 +1056,7 @@ GameObject:
   - component: {fileID: 1779490248}
   - component: {fileID: 1779490251}
   - component: {fileID: 1779490250}
-  - component: {fileID: 1779490249}
+  - component: {fileID: 8058890385061142026}
   m_Layer: 5
   m_Name: End
   m_TagString: Untagged
@@ -1118,7 +1121,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &1779490249
+--- !u!114 &8058890385061142026
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1127,7 +1130,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1779490247}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Script: {fileID: 11500000, guid: 33985591f0bff0747a5d4373015a01e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
@@ -1137,7 +1140,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -1174,6 +1177,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onInteractionFinished:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1953495067
 GameObject:
   m_ObjectHideFlags: 0
@@ -1223,7 +1229,7 @@ GameObject:
   - component: {fileID: 1967859819}
   - component: {fileID: 1967859822}
   - component: {fileID: 1967859821}
-  - component: {fileID: 1967859820}
+  - component: {fileID: 5739527403452652821}
   m_Layer: 5
   m_Name: Pick
   m_TagString: Untagged
@@ -1288,7 +1294,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &1967859820
+--- !u!114 &5739527403452652821
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1297,7 +1303,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1967859818}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Script: {fileID: 11500000, guid: 33985591f0bff0747a5d4373015a01e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
@@ -1307,7 +1313,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -1344,6 +1350,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onInteractionFinished:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1918373214819095913
 GameObject:
   m_ObjectHideFlags: 0
@@ -1355,7 +1364,7 @@ GameObject:
   - component: {fileID: 2488115235545962264}
   - component: {fileID: 2844301197986395269}
   - component: {fileID: 3663658419069329470}
-  - component: {fileID: 3891576492331136042}
+  - component: {fileID: 7545742953984027115}
   m_Layer: 5
   m_Name: Quit
   m_TagString: Untagged
@@ -1420,7 +1429,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &3891576492331136042
+--- !u!114 &7545742953984027115
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1429,7 +1438,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1918373214819095913}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Script: {fileID: 11500000, guid: 33985591f0bff0747a5d4373015a01e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
@@ -1439,7 +1448,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -1464,7 +1473,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 392607145}
+      - m_Target: {fileID: 861498072853564080}
         m_TargetAssemblyTypeName: PauseMenuManager, Scripts
         m_MethodName: QuitGame
         m_Mode: 1
@@ -1476,6 +1485,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onInteractionFinished:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2333519690940555269
 GameObject:
   m_ObjectHideFlags: 0
@@ -1487,7 +1499,7 @@ GameObject:
   - component: {fileID: 1659502069200163068}
   - component: {fileID: 6412416044017032568}
   - component: {fileID: 5578104884947531255}
-  - component: {fileID: 627731885126596577}
+  - component: {fileID: 557551806931415115}
   m_Layer: 5
   m_Name: MainMenu
   m_TagString: Untagged
@@ -1552,7 +1564,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &627731885126596577
+--- !u!114 &557551806931415115
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1561,7 +1573,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2333519690940555269}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Script: {fileID: 11500000, guid: 33985591f0bff0747a5d4373015a01e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
@@ -1571,7 +1583,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -1596,7 +1608,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 392607145}
+      - m_Target: {fileID: 861498072853564080}
         m_TargetAssemblyTypeName: PauseMenuManager, Scripts
         m_MethodName: LoadMenu
         m_Mode: 1
@@ -1608,6 +1620,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onInteractionFinished:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &4862934801147950023
 GameObject:
   m_ObjectHideFlags: 0
@@ -1753,7 +1768,7 @@ GameObject:
   - component: {fileID: 8240526455984759959}
   - component: {fileID: 1876598055147610440}
   - component: {fileID: 2077758726506625820}
-  - component: {fileID: 7220344180494361705}
+  - component: {fileID: 7983324641963674407}
   m_Layer: 5
   m_Name: ResumeButton
   m_TagString: Untagged
@@ -1819,7 +1834,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &7220344180494361705
+--- !u!114 &7983324641963674407
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1863,7 +1878,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 392607145}
+      - m_Target: {fileID: 861498072853564080}
         m_TargetAssemblyTypeName: PauseMenuManager, Scripts
         m_MethodName: Resume
         m_Mode: 1
@@ -2313,7 +2328,7 @@ GameObject:
   - component: {fileID: 5676875695942001965}
   - component: {fileID: 4440230095379519744}
   - component: {fileID: 1756036057259425238}
-  - component: {fileID: 3891643321323846498}
+  - component: {fileID: 7736977109227165872}
   m_Layer: 5
   m_Name: Settings
   m_TagString: Untagged
@@ -2378,7 +2393,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &3891643321323846498
+--- !u!114 &7736977109227165872
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2387,7 +2402,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7339844616361749536}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Script: {fileID: 11500000, guid: 33985591f0bff0747a5d4373015a01e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
@@ -2397,7 +2412,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -2420,6 +2435,9 @@ MonoBehaviour:
   m_Interactable: 1
   m_TargetGraphic: {fileID: 1756036057259425238}
   m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+  onInteractionFinished:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &7974667291851954888

@@ -574,7 +574,7 @@ GameObject:
   - component: {fileID: 1901995450}
   - component: {fileID: 1901995453}
   - component: {fileID: 1901995452}
-  - component: {fileID: 1901995451}
+  - component: {fileID: 8818657497209831376}
   m_Layer: 5
   m_Name: Start
   m_TagString: Untagged
@@ -640,7 +640,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &1901995451
+--- !u!114 &8818657497209831376
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -649,7 +649,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1901995449}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Script: {fileID: 11500000, guid: 33985591f0bff0747a5d4373015a01e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
@@ -659,7 +659,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -685,7 +685,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4269205444699379674}
-        m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
+        m_TargetAssemblyTypeName: MainMenuManager, Scripts
         m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:
@@ -696,6 +696,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onInteractionFinished:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1988593634
 GameObject:
   m_ObjectHideFlags: 0
@@ -1176,7 +1179,7 @@ GameObject:
   - component: {fileID: 4059509923587073559}
   - component: {fileID: 4136112695579632573}
   - component: {fileID: 2984727117415538267}
-  - component: {fileID: 7714530005975273213}
+  - component: {fileID: 5285020268569450331}
   m_Layer: 5
   m_Name: QuitButton
   m_TagString: Untagged
@@ -1241,7 +1244,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &7714530005975273213
+--- !u!114 &5285020268569450331
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1250,7 +1253,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3741621926847741425}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Script: {fileID: 11500000, guid: 33985591f0bff0747a5d4373015a01e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
@@ -1260,7 +1263,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -1283,6 +1286,21 @@ MonoBehaviour:
   m_Interactable: 1
   m_TargetGraphic: {fileID: 2984727117415538267}
   m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4269205444699379674}
+        m_TargetAssemblyTypeName: MainMenuManager, Scripts
+        m_MethodName: QuitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onInteractionFinished:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &8543354280866366674
