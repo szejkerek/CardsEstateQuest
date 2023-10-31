@@ -42,10 +42,9 @@ public class CardObject : ICard
     {
         Transform meshChild = buildingInstance.transform.Find("Mesh"); //String yikes TODO: Zmienić na referencje na postawie modelu
 
-        MeshCollider mesh = meshChild.gameObject.AddComponent<MeshCollider>();
-        mesh.convex = true;
+        meshChild.gameObject.AddComponent<BoxCollider>();
 
-        ParameterGoalManager.Instance.UpdateGlobalParameters(parameters);
+        GameplayManager.Instance.ParameterGoalManager.UpdateGlobalParameters(parameters);
         GameplayManager.Instance.DeselectCard();
         Debug.Log("Placed");
     }

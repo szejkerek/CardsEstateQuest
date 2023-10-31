@@ -10,7 +10,7 @@ public class GridManager : MonoBehaviour
     [SerializeField] private Vector2Int gridSize;
     [SerializeField] private Vector2 gridSpacing;
 
-    private void Awake()
+    private void Start()
     {
         GenerateGrid();
     }

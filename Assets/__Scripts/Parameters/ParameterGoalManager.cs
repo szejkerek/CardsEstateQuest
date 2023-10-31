@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ParameterGoalManager : Singleton<ParameterGoalManager> 
+public class ParameterGoalManager : MonoBehaviour
 {
     [SerializeField] RectTransform goalsContainer;
     [SerializeField] ParameterGoal goalsPrefab;

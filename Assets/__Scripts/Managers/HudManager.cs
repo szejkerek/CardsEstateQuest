@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HudManager : Singleton<HudManager>
+public class HudManager : MonoBehaviour 
 {
     [Header("UI")]
     [SerializeField] TextMeshProUGUI nicknameText;

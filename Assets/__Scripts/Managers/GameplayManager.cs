@@ -7,18 +7,35 @@ public class GameplayManager : Singleton<GameplayManager>
 {
     public CrudList<ICard> CardList => cardList;
     CrudList<ICard> cardList = new CrudList<ICard>();    
-    public GridManager GridManager => gridManager;
-    GridManager gridManager;
+
     public CardObject SelectedCard => selectedCard;
     CardObject selectedCard;
 
     [SerializeField] AssetLabelReference defaultCardsLabel;
 
+    //Managers
+    public GridManager GridManager => gridManager;
+    GridManager gridManager;
+
+    public HudManager HudManager => hudManager;
+    HudManager hudManager;
+
+    public ParameterGoalManager ParameterGoalManager => parameterGoalManager;
+    ParameterGoalManager parameterGoalManager;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        cardList.LoadList(defaultCardsLabel); 
+    }
+
     private void Start()
     {
-        cardList.LoadList(defaultCardsLabel); 
-        gridManager = GetComponent<GridManager>();        
+        hudManager = GetComponent<HudManager>();
+        parameterGoalManager = GetComponent<ParameterGoalManager>();
+        gridManager = GetComponent<GridManager>();
     }
+
     public void LoadEndMenu()
     {
         SceneLoader.Instance.LoadScene(SceneEnum.EndMenu);
