@@ -910,9 +910,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SwitchCameraController, Scripts
-        m_MethodName: ManageCamera
+      - m_Target: {fileID: 6858865119598840147}
+        m_TargetAssemblyTypeName: GameplayManager, Scripts
+        m_MethodName: SwitchCamera
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2206,7 +2206,6 @@ GameObject:
   - component: {fileID: 5470280096728946927}
   - component: {fileID: 832348510}
   - component: {fileID: 165585589}
-  - component: {fileID: 165585590}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2244,6 +2243,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultCardsLabel:
     m_LabelString: DefaultCards
+  _playerCamera: {fileID: 0}
 --- !u!114 &7659888770948953012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2302,21 +2302,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 5175480363462562142}
---- !u!114 &165585590
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6858865119598840144}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f2168e9e51dbc04caef391859a351c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _mainCamera: {fileID: 0}
-  _playerCamera: {fileID: 0}
-  _manager: 1
 --- !u!1 &7339844616361749536
 GameObject:
   m_ObjectHideFlags: 0

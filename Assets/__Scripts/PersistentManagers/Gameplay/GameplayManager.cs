@@ -5,13 +5,16 @@ using UnityEngine.AddressableAssets;
 
 public class GameplayManager : Singleton<GameplayManager> 
 {
+    [SerializeField] AssetLabelReference defaultCardsLabel;
+    [SerializeField] private GameObject _playerCamera;
+    private GameObject _mainCamera;
+
+
     public CrudList<ICard> CardList => cardList;
     CrudList<ICard> cardList = new CrudList<ICard>();    
 
     public CardObject SelectedCard => selectedCard;
     CardObject selectedCard;
-
-    [SerializeField] AssetLabelReference defaultCardsLabel;
 
     //Managers
     public GridManager GridManager => gridManager;
@@ -26,7 +29,8 @@ public class GameplayManager : Singleton<GameplayManager>
     protected override void Awake()
     {
         base.Awake();
-        cardList.LoadList(defaultCardsLabel); 
+        cardList.LoadList(defaultCardsLabel);
+        _mainCamera = Camera.main.gameObject;
     }
 
     private void Start()
@@ -34,6 +38,13 @@ public class GameplayManager : Singleton<GameplayManager>
         hudManager = GetComponent<HudManager>();
         parameterGoalManager = GetComponent<ParameterGoalManager>();
         gridManager = GetComponent<GridManager>();
+    }
+
+
+    public void SwitchCamera()
+    {
+        _mainCamera.SetActive(!_mainCamera.activeSelf);
+        _playerCamera.SetActive(!_playerCamera.activeSelf);
     }
 
     public void LoadEndMenu()

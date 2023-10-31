@@ -6,17 +6,17 @@ using UnityEngine.UI;
 
 public class HudManager : MonoBehaviour 
 {
-    [Header("UI")]
+    [Header("InfoPanel")]
     [SerializeField] TextMeshProUGUI nicknameText;
     [SerializeField] TextMeshProUGUI bombsLeftText;
     [SerializeField] Image difficultyIcon;
 
     private void Start()
     {
-        UpdateHud();
+        UpdateInfoPanel();
     }
 
-    public void UpdateHud()
+    public void UpdateInfoPanel()
     {
         string nickname = PlayerPrefs.GetString("nickname");
         nicknameText.text = nickname;
