@@ -40,4 +40,15 @@ public class ParameterGoalManager : MonoBehaviour
             }
         }
     }
+
+    public bool DidWin()
+    {
+        bool win = true;
+        foreach (var parameter in parameterGoals)
+        {
+            if (parameter.Value.ConditionAcomplished() == false)
+                win = false;
+        }
+        return win;
+    }
 }

@@ -4,21 +4,14 @@ using UnityEngine.AddressableAssets;
 public class GameplayManager : Singleton<GameplayManager> 
 {
     [SerializeField] AssetLabelReference defaultCardsLabel;
-    [SerializeField] private GameObject _playerCamera;
-    private GameObject _mainCamera;
+    [SerializeField] private GameObject playerCamera;
+    private GameObject mainCamera;
 
     public int BombCount => bombCount;
     int bombCount;
 
-    public CrudList<ICard> CardList => cardList;
-    CrudList<ICard> cardList = new CrudList<ICard>();    
-
     public CardObject SelectedCard => selectedCard;
     CardObject selectedCard;
-
-    //Managers
-    public GridManager GridManager => gridManager;
-    GridManager gridManager;
 
     public HudManager HudManager => hudManager;
     HudManager hudManager;
@@ -26,11 +19,15 @@ public class GameplayManager : Singleton<GameplayManager>
     public ParameterGoalManager ParameterGoalManager => parameterGoalManager;
     ParameterGoalManager parameterGoalManager;
 
+    EndMenuManager endMenu;
+    CrudList<ICard> cardList = new CrudList<ICard>();    
+
     protected override void Awake()
     {
         base.Awake();
         cardList.LoadList(defaultCardsLabel);
-        _mainCamera = Camera.main.gameObject;
+        endMenu = GetComponent<EndMenuManager>();   
+        mainCamera = Camera.main.gameObject;
         bombCount = GameManager.Instance.Difficulty.NumberOfBombs;
     }
 
@@ -38,24 +35,22 @@ public class GameplayManager : Singleton<GameplayManager>
     {
         hudManager = GetComponent<HudManager>();
         parameterGoalManager = GetComponent<ParameterGoalManager>();
-        gridManager = GetComponent<GridManager>();
     }
 
+    public void ShowEndMenu()
+    {
+        endMenu.Show(parameterGoalManager.DidWin());
+    }
 
     public void SwitchCamera()
     {
-        _mainCamera.SetActive(!_mainCamera.activeSelf);
-        _playerCamera.SetActive(!_playerCamera.activeSelf);
-    }
-
-    public void LoadEndMenu()
-    {
-        SceneLoader.Instance.LoadScene(SceneEnum.EndMenu);
+        mainCamera.SetActive(!mainCamera.activeSelf);
+        playerCamera.SetActive(!playerCamera.activeSelf);
     }
 
     public void SelectCard()
     {
-        selectedCard = new CardObject(CardList.GetRandomItem());
+        selectedCard = new CardObject(cardList.GetRandomItem());
         Debug.Log(selectedCard.Model.name + " card selected");
     }
 

@@ -12,7 +12,10 @@ public class GameManager : Singleton<GameManager>
     protected override void Awake()
     {
         base.Awake();
-        SetDifficulty(defaultDifficulty);
+        if(difficulty == null ) 
+        { 
+           SetDifficulty(defaultDifficulty);
+        }
     }
 
     public void SetDifficulty(IDifficulty difficulty)

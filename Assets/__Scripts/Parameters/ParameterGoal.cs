@@ -15,17 +15,52 @@ public class ParameterGoal : MonoBehaviour
     public ParameterRule ParameterRule => parameterRule;
     ParameterRule parameterRule;
 
-    public float Value => value;
     float value = 0;
 
     int cardsContributedToValue = 0;
-
 
     public void Init(ParameterRule parameterRule)
     {
         this.parameterRule = parameterRule;
         SetStaticParameterInfo(parameterRule);
         UpdateParameterGoalUI();
+    }
+
+    public void UpdateParameterGoalUI()
+    {
+        switch (parameterRule.GetValueType())
+        {
+            case ParameterTypeEnum.Decimal:
+            case ParameterTypeEnum.Whole:
+                CurrentValue.text = $"Val: {value}";
+                break;
+            case ParameterTypeEnum.Percentage:
+                CurrentValue.text = $"Val: {value * 100}%";
+                break;
+        }
+        ValueInfo.text = UpdateInfoText();
+    }
+    public void UpdateParameter(float valueToAdd, bool cardDestroyed)
+    {
+        float addValue = cardDestroyed ? -valueToAdd : valueToAdd;
+        cardsContributedToValue += cardDestroyed ? -1 : 1;
+        switch (parameterRule.GetValueType())
+        {
+            case ParameterTypeEnum.Whole:
+                value += Mathf.RoundToInt(addValue);
+                break;
+            case ParameterTypeEnum.Decimal:
+            case ParameterTypeEnum.Percentage:
+                value = MovingAvarage(addValue);
+                break;
+        }
+
+        UpdateParameterGoalUI();
+    }
+
+    public bool ConditionAcomplished()
+    {
+        return (value >= parameterRule.MinValue && value <= parameterRule.MaxValue);
     }
 
     private void SetStaticParameterInfo(ParameterRule parameterRule)
@@ -53,39 +88,6 @@ public class ParameterGoal : MonoBehaviour
             MaxValue.text = $"Max: {parameterRule.MaxValue}";
         }
 
-    }
-
-    public void UpdateParameter(float valueToAdd, bool cardDestroyed)
-    {
-        float addValue = cardDestroyed ? -valueToAdd : valueToAdd;
-        cardsContributedToValue += cardDestroyed ? -1 : 1;
-        switch (parameterRule.GetValueType())
-        {
-            case ParameterTypeEnum.Whole:
-                value += Mathf.RoundToInt(addValue);
-                break;
-            case ParameterTypeEnum.Decimal:
-            case ParameterTypeEnum.Percentage:
-                value = MovingAvarage(addValue);
-                break;
-        }
-
-        UpdateParameterGoalUI();
-    }
-
-    public void UpdateParameterGoalUI()
-    {
-        switch (parameterRule.GetValueType())
-        {
-            case ParameterTypeEnum.Decimal:
-            case ParameterTypeEnum.Whole:
-            CurrentValue.text = $"Val: {value}";
-                break;
-            case ParameterTypeEnum.Percentage:
-            CurrentValue.text = $"Val: {value*100}%";
-                break;
-        }
-        ValueInfo.text = UpdateInfoText();
     }
 
     private string UpdateInfoText()
