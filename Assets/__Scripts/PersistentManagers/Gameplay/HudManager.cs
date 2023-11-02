@@ -13,14 +13,19 @@ public class HudManager : MonoBehaviour
 
     private void Start()
     {
-        UpdateInfoPanel();
+        SetInfoPanel();
     }
 
-    public void UpdateInfoPanel()
+    private void SetInfoPanel()
     {
         string nickname = PlayerPrefs.GetString("nickname");
         nicknameText.text = nickname;
         bombsLeftText.text = GameManager.Instance.Difficulty.NumberOfBombs.ToString();
         difficultyIcon.sprite = GameManager.Instance.Difficulty.Icon;
+    }
+
+    public void UpdateBombCount()
+    {
+        bombsLeftText.text = GameplayManager.Instance.BombCount.ToString();
     }
 }

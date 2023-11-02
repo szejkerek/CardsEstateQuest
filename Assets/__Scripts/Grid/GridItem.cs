@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class GridItem : MonoBehaviour
 {
@@ -8,8 +8,9 @@ public class GridItem : MonoBehaviour
     Renderer _renderer;
     bool hoversOver = false;
     GameplayManager manager;
+    GameObject currentBuilding = null;
 
-    private void Start()
+    private void Awake()
     {
         _renderer = GetComponent<Renderer>();
         manager = GameplayManager.Instance;
@@ -21,10 +22,7 @@ public class GridItem : MonoBehaviour
         if (!hoversOver || isTaken || manager.SelectedCard == null)
             return;
 
-        CardObject card = manager.SelectedCard;
-
-        GameObject building = Instantiate(card.Model, transform.position, transform.rotation);
-        card.OnCardPlaced(building);
+        PlaceCard();
         isTaken = true;
     }
 
@@ -40,4 +38,29 @@ public class GridItem : MonoBehaviour
         _renderer.material = _initalMateral;
     }
 
+    public void PlaceCard()
+    {
+        CardObject card = manager.SelectedCard;
+        currentBuilding = Instantiate(card.Model, transform.position, transform.rotation);
+        Transform meshChild = currentBuilding.transform.Find("Mesh"); //String yikes TODO: Zmienić na referencje na postawie modelu
+
+        DestroyWithBomb bomb = meshChild.gameObject.AddComponent<DestroyWithBomb>();
+        bomb.BombUsed += OnBombUsed;
+        bomb.BombUsed += GameplayManager.Instance.HudManager.UpdateBombCount;
+
+        meshChild.gameObject.AddComponent<BoxCollider>();
+
+        GameplayManager.Instance.ParameterGoalManager.UpdateGlobalParameters(card.Parameters);
+        GameplayManager.Instance.DeselectCard();
+        Debug.Log("Placed");
+    }
+    public void OnBombUsed()
+    {
+        if (!GameplayManager.Instance.UseBomb())
+            return;
+
+        isTaken = false;
+        Destroy(currentBuilding);
+        Debug.Log("Destroyed");
+    }
 }

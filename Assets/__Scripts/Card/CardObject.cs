@@ -38,18 +38,4 @@ public class CardObject : ICard
         model = card.Model;
     }
 
-    public void OnCardPlaced(GameObject buildingInstance)
-    {
-        Transform meshChild = buildingInstance.transform.Find("Mesh"); //String yikes TODO: Zmienić na referencje na postawie modelu
-
-        meshChild.gameObject.AddComponent<BoxCollider>();
-
-        GameplayManager.Instance.ParameterGoalManager.UpdateGlobalParameters(parameters);
-        GameplayManager.Instance.DeselectCard();
-        Debug.Log("Placed");
-    }
-    public void OnCardDestroyed()
-    {
-        Debug.Log("Destroyed");
-    }
 }
