@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Runtime.InteropServices.ComTypes;
 using UnityEngine;
 /// <summary>
 /// A ScriptableObject representing a card in a card game.
