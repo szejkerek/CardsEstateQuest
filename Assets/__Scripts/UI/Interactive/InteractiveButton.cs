@@ -5,8 +5,14 @@ using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
+/// <summary>
+/// Represents an interactive button with animation on press.
+/// </summary>
 public class InteractiveButton : Button
 {
+    /// <summary>
+    /// Event triggered when the interaction is finished.
+    /// </summary>
     [SerializeField]
     public UnityEvent onInteractionFinished;
 
