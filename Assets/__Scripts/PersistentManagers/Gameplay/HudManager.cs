@@ -4,7 +4,10 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HudManager : MonoBehaviour 
+/// <summary>
+/// Manages the HUD elements and information display.
+/// </summary>
+public class HudManager : MonoBehaviour
 {
     [Header("InfoPanel")]
     [SerializeField] TextMeshProUGUI nicknameText;
@@ -16,6 +19,9 @@ public class HudManager : MonoBehaviour
         SetInfoPanel();
     }
 
+    /// <summary>
+    /// Sets the information panel with player's nickname, bomb count, and difficulty icon.
+    /// </summary>
     private void SetInfoPanel()
     {
         string nickname = PlayerPrefs.GetString("nickname");
@@ -24,6 +30,9 @@ public class HudManager : MonoBehaviour
         difficultyIcon.sprite = GameManager.Instance.Difficulty.Icon;
     }
 
+    /// <summary>
+    /// Updates the bomb count display in the HUD.
+    /// </summary>
     public void UpdateBombCount()
     {
         bombsLeftText.text = GameplayManager.Instance.BombCount.ToString();

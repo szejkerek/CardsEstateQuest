@@ -76,7 +76,7 @@ public class ParameterGoal : MonoBehaviour
     /// <summary>
     /// Checks if the condition of the parameter goal is accomplished.
     /// </summary>
-    public bool ConditionAccomplished()
+    public bool ConditionAcomplished()
     {
         return (value >= parameterRule.MinValue && value <= parameterRule.MaxValue);
     }
