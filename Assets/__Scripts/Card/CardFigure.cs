@@ -1,4 +1,7 @@
-﻿[System.Serializable]
+﻿/// <summary>
+/// An enumeration representing the figure of a card, such as Ace, King, Queen, etc.
+/// </summary>
+[System.Serializable]
 public enum CardFigure
 {
     Ace,
