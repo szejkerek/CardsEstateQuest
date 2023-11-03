@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+/// <summary>
+/// Controls camera movement, rotation, and zoom based on input actions.
+/// </summary>
 public class CameraController : MonoBehaviour
 {
     private Vector2 _delta;
@@ -17,7 +20,6 @@ public class CameraController : MonoBehaviour
     [SerializeField] private float rotationSpeed = 2f;
     [SerializeField] private float zoomSpeed = 1f;
 
-
     private void Awake()
     {
         _xRotation = transform.rotation.eulerAngles.x;
@@ -33,17 +35,14 @@ public class CameraController : MonoBehaviour
         if (_isBusy) return;
 
         _isRotating = context.started || context.performed;
-
     }
 
     public void OnZoom(InputAction.CallbackContext context)
     {
         if (_isBusy) return;
 
-        _zoomDelta = context.ReadValue<Vector2>().y/100 * zoomSpeed;
+        _zoomDelta = context.ReadValue<Vector2>().y / 100 * zoomSpeed;
         _isZooming = context.started || context.performed;
-
-       
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -51,8 +50,6 @@ public class CameraController : MonoBehaviour
         if (_isBusy) return;
 
         _isMoving = context.started || context.performed;
-
-
     }
 
     private void LateUpdate()
@@ -67,7 +64,7 @@ public class CameraController : MonoBehaviour
         {
             transform.Rotate(new Vector3(_xRotation, -_delta.x * rotationSpeed * Time.deltaTime, 0.0f));
             transform.rotation = Quaternion.Euler(_xRotation, transform.rotation.eulerAngles.y, 0.0f);
-        }      
+        }
         if (_isZooming)
         {
             Camera.main.orthographicSize = Mathf.Clamp(Camera.main.orthographicSize - _zoomDelta * Time.deltaTime, 1f, 30f);
