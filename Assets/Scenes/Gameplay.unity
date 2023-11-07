@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.23138061, g: 0.6064335, b: 0.9880225, a: 1}
+  m_IndirectSpecularColor: {r: 0.23138063, g: 0.6064335, b: 0.9880225, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -914,6 +914,26 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 557135009, guid: f6e76cb27882cde43a4d8180df37a8d0, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 557135009, guid: f6e76cb27882cde43a4d8180df37a8d0, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 588962742, guid: f6e76cb27882cde43a4d8180df37a8d0, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 588962742, guid: f6e76cb27882cde43a4d8180df37a8d0, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 588962742, guid: f6e76cb27882cde43a4d8180df37a8d0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1645945313, guid: f6e76cb27882cde43a4d8180df37a8d0, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -982,5 +1002,13 @@ PrefabInstance:
       propertyPath: playerCamera
       value: 
       objectReference: {fileID: 1115405010}
+    - target: {fileID: 7659888770948953012, guid: f6e76cb27882cde43a4d8180df37a8d0, type: 3}
+      propertyPath: gridSize.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7659888770948953012, guid: f6e76cb27882cde43a4d8180df37a8d0, type: 3}
+      propertyPath: gridSize.y
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6e76cb27882cde43a4d8180df37a8d0, type: 3}
