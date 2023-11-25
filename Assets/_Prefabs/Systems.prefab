@@ -48,6 +48,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultDifficulty: {fileID: 11400000, guid: 309796aa0ebedef4eab35ecffc57a001, type: 2}
+  treeLabel:
+    m_LabelString: Trees
+  treeChance: 0.7
+  fountainsLabel:
+    m_LabelString: 
+  fountainChance: 0.4
 --- !u!114 &7271808274217387279
 MonoBehaviour:
   m_ObjectHideFlags: 0
