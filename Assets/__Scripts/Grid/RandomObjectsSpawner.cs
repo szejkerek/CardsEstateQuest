@@ -11,6 +11,8 @@ public struct CardObjectCompontents
 
 public class RandomObjectsSpawner : MonoBehaviour
 {
+    public Pedestrian pedo;
+    public int pedoCount = 5;
     CardObjectCompontents trees;
     CardObjectCompontents fountains;
 
@@ -22,6 +24,7 @@ public class RandomObjectsSpawner : MonoBehaviour
         
         PlaceObjects(trees);
     }
+
 
     private CardObjectCompontents LoadComponent(float spawnChance, List<GameObject> models, string tag)
     {

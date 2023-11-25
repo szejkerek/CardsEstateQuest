@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
+using UnityEngine.AI;
 
 public class GridItem : MonoBehaviour
 {
+
+
     [SerializeField] bool isTaken = false;
     [SerializeField] Material _hoverMaterial;
-    Material _initalMateral;
+    Material _initalMaterial;
     Renderer _renderer;
     bool hoversOver = false;
     GameplayManager manager;
@@ -14,7 +17,7 @@ public class GridItem : MonoBehaviour
     {
         _renderer = GetComponent<Renderer>();
         manager = GameplayManager.Instance;
-        _initalMateral = _renderer.material;
+        _initalMaterial = _renderer.material;
     }
 
     private void OnMouseDown()
@@ -35,7 +38,7 @@ public class GridItem : MonoBehaviour
     public void OnMouseExit()
     {
         hoversOver = false;
-        _renderer.material = _initalMateral;
+        _renderer.material = _initalMaterial;
     }
 
     public void PlaceCard()
@@ -52,6 +55,9 @@ public class GridItem : MonoBehaviour
 
         GameplayManager.Instance.ParameterGoalManager.UpdateGlobalParameters(card.Parameters);
         GameplayManager.Instance.DeselectCard();
+
+        RebuildNavMesh();
+
         Debug.Log("Placed");
     }
     public void OnBombUsed()
@@ -61,6 +67,15 @@ public class GridItem : MonoBehaviour
 
         isTaken = false;
         Destroy(currentBuilding);
-        Debug.Log("Destroyed");
+
+        RebuildNavMesh();
+    }
+    private static void RebuildNavMesh()
+    {
+        NavMeshSurface navMesh = FindObjectOfType<NavMeshSurface>();
+        if (navMesh != null)
+        {
+            navMesh.BuildNavMesh();
+        }
     }
 }

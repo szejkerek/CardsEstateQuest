@@ -62,6 +62,7 @@ public class GameplayManager : Singleton<GameplayManager>
             return false;
         }
 
+
         bombCount--;
         return true;
     }

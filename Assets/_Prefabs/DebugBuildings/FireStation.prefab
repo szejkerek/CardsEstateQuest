@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2072922438449438195}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spot (1)
   m_TagString: PossibleTreeSpot
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8693124209441939333}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spot
   m_TagString: PossibleTreeSpot
   m_Icon: {fileID: 0}
@@ -69,7 +69,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8880552346311476779}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spot (3)
   m_TagString: PossibleTreeSpot
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ GameObject:
   - component: {fileID: 7848338110675901190}
   - component: {fileID: 6953942137679362061}
   - component: {fileID: 9076316756337238263}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FireStation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -189,6 +189,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56a3bf8a7cc68524095c9dfbd156c123, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pedo: {fileID: 1228013577151872244, guid: c220a63ea1a42024caffa22c954bd445, type: 3}
+  pedoCount: 5
 --- !u!1 &3537530702057560089
 GameObject:
   m_ObjectHideFlags: 0
@@ -198,7 +200,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7540031413408963883}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spot (2)
   m_TagString: PossibleTreeSpot
   m_Icon: {fileID: 0}
@@ -229,6 +231,10 @@ PrefabInstance:
     - target: {fileID: 3520681445263854137, guid: e478292f536a7134e8e48cb62cf2be07, type: 3}
       propertyPath: m_Name
       value: Mesh
+      objectReference: {fileID: 0}
+    - target: {fileID: 3520681445263854137, guid: e478292f536a7134e8e48cb62cf2be07, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4291976296259555459, guid: e478292f536a7134e8e48cb62cf2be07, type: 3}
       propertyPath: m_RootOrder
@@ -288,8 +294,29 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e478292f536a7134e8e48cb62cf2be07, type: 3}
+--- !u!1 &6821353589848874443 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3520681445263854137, guid: e478292f536a7134e8e48cb62cf2be07, type: 3}
+  m_PrefabInstance: {fileID: 7958328855838971890}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6188368506094307185 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4291976296259555459, guid: e478292f536a7134e8e48cb62cf2be07, type: 3}
   m_PrefabInstance: {fileID: 7958328855838971890}
   m_PrefabAsset: {fileID: 0}
+--- !u!208 &1175435857228658091
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6821353589848874443}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 8.091001, y: 7.3440003, z: 7.5600004}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.14, y: 7.3440003, z: 1.235}
+  m_TimeToStationary: 0.5
