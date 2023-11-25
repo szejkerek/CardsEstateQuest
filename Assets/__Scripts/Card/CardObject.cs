@@ -40,12 +40,12 @@ public class CardObject : ICard
     /// <summary>
     /// Initializes a new instance of the CardObject class with the specified parameters.
     /// </summary>
-    public CardObject(CardFigure _figure, CardColor _color, Sprite _pictogram, List<ParameterValue> _parameters, GameObject _model)
+    public CardObject(CardFigure _figure, CardColor _color, Sprite _sprite, List<ParameterValue> _cardParameters, GameObject _model)
     {
         figure = _figure;
         color = _color;
-        pictogram = _pictogram;
-        parameters = _parameters;
+        pictogram = _sprite;
+        parameters = _cardParameters;
         model = _model;
     }
 
