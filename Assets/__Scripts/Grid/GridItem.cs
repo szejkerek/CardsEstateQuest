@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
+using UnityEngine.AI;
 
-/// <summary>
-/// Manages interactions and placement of cards on a grid item.
-/// </summary>
 public class GridItem : MonoBehaviour
 {
+
+
     [SerializeField] bool isTaken = false;
     [SerializeField] Material _hoverMaterial;
-    Material _initialMaterial;
+    Material _initalMaterial;
     Renderer _renderer;
     bool hoversOver = false;
     GameplayManager manager;
@@ -17,7 +17,7 @@ public class GridItem : MonoBehaviour
     {
         _renderer = GetComponent<Renderer>();
         manager = GameplayManager.Instance;
-        _initialMaterial = _renderer.material;
+        _initalMaterial = _renderer.material;
     }
 
     private void OnMouseDown()
@@ -29,32 +29,23 @@ public class GridItem : MonoBehaviour
         isTaken = true;
     }
 
-    /// <summary>
-    /// Handles the mouse hover behavior over the grid item.
-    /// </summary>
     public void OnMouseOver()
     {
         hoversOver = true;
         _renderer.material = _hoverMaterial;
     }
 
-    /// <summary>
-    /// Handles the mouse exit behavior from the grid item.
-    /// </summary>
     public void OnMouseExit()
     {
         hoversOver = false;
-        _renderer.material = _initialMaterial;
+        _renderer.material = _initalMaterial;
     }
 
-    /// <summary>
-    /// Places a card on the grid item and sets up necessary components and events.
-    /// </summary>
     public void PlaceCard()
     {
         CardObject card = manager.SelectedCard;
         currentBuilding = Instantiate(card.Model, transform.position, transform.rotation);
-        Transform meshChild = currentBuilding.transform.Find("Mesh"); // TODO: Replace with a reference based on the model
+        Transform meshChild = currentBuilding.transform.Find("Mesh"); //String yikes TODO: Zmienić na referencje na postawie modelu
 
         DestroyWithBomb bomb = meshChild.gameObject.AddComponent<DestroyWithBomb>();
         bomb.BombUsed += OnBombUsed;
@@ -64,12 +55,11 @@ public class GridItem : MonoBehaviour
 
         GameplayManager.Instance.ParameterGoalManager.UpdateGlobalParameters(card.Parameters);
         GameplayManager.Instance.DeselectCard();
+
+        RebuildNavMesh();
+
         Debug.Log("Placed");
     }
-
-    /// <summary>
-    /// Handles the event when a bomb is used, destroying the current building.
-    /// </summary>
     public void OnBombUsed()
     {
         if (!GameplayManager.Instance.UseBomb())
@@ -77,6 +67,15 @@ public class GridItem : MonoBehaviour
 
         isTaken = false;
         Destroy(currentBuilding);
-        Debug.Log("Destroyed");
+
+        RebuildNavMesh();
+    }
+    private static void RebuildNavMesh()
+    {
+        NavMeshSurface navMesh = FindObjectOfType<NavMeshSurface>();
+        if (navMesh != null)
+        {
+            navMesh.BuildNavMesh();
+        }
     }
 }

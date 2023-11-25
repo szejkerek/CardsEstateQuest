@@ -12,7 +12,7 @@ public class GameManager : Singleton<GameManager>
     public List<GameObject> Trees => trees;
     List<GameObject> trees;
 
-    [SerializeField] AssetLabelReference fountainsLabel;
+    [SerializeField] AssetLabelReference fountainLabel;
     public float FoutainChance => fountainChance;
     [SerializeField, Range(0f, 1f)] float fountainChance;
     public List<GameObject> Fountains => fountains;
@@ -31,7 +31,7 @@ public class GameManager : Singleton<GameManager>
 
         DefaultLoader<GameObject> loader = new DefaultLoader<GameObject>();
         trees = loader.Load(treeLabel);
-        //fountains = loader.Load(fountainsLabel);
+        fountains = loader.Load(fountainLabel);
     }
 
     public void SetDifficulty(IDifficulty difficulty)
