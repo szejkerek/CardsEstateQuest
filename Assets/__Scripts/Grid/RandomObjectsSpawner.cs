@@ -18,9 +18,10 @@ public class RandomObjectsSpawner : MonoBehaviour
     {
         GameManager gm = GameManager.Instance;
         trees = LoadComponent(gm.TreeChance, gm.Trees, "PossibleTreeSpot");
-        //fountains = LoadComponent(gm.FoutainChance, gm.Fountains, "PossibleFountainsSpawns");
+        fountains = LoadComponent(gm.FoutainChance, gm.Fountains, "PossibleFountainSpot");
         
-        PlaceObjects(trees);
+       PlaceObjects(trees);
+         PlaceFountains(fountains);
     }
 
     private CardObjectCompontents LoadComponent(float spawnChance, List<GameObject> models, string tag)
@@ -52,4 +53,17 @@ public class RandomObjectsSpawner : MonoBehaviour
             }
         }
     }
+    public void PlaceFountains(CardObjectCompontents objectCompontents)
+{
+    if (objectCompontents.possibleSpawns.Count == 0)
+        return;
+     
+    foreach (var spot in objectCompontents.possibleSpawns)
+    {
+        if(Random.Range(0f,1f) <= GameManager.Instance.FoutainChance)
+        {
+            Instantiate(objectCompontents.models[0], spot.transform.position, Quaternion.identity);
+        }
+    }
+}
 }

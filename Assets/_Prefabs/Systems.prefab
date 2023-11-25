@@ -51,9 +51,9 @@ MonoBehaviour:
   treeLabel:
     m_LabelString: Trees
   treeChance: 0.7
-  fountainsLabel:
-    m_LabelString: 
-  fountainChance: 0.4
+  fountainLabel:
+    m_LabelString: Fountain
+  fountainChance: 0.48
 --- !u!114 &7271808274217387279
 MonoBehaviour:
   m_ObjectHideFlags: 0
