@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Manages player movement and interaction.
+/// </summary>
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement")]
@@ -24,13 +27,14 @@ public class PlayerMovement : MonoBehaviour
         gridManager = FindObjectOfType<GridManager>();
         rb.freezeRotation = true;
     }
+
     private void Update()
     {
         MyInput();
         SpeedControl();
         ClampPosition();
-
     }
+
     private void MyInput()
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
@@ -47,11 +51,10 @@ public class PlayerMovement : MonoBehaviour
         if (playerCamera.gameObject.activeSelf)
         {
             moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
-
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
         }
-
     }
+
     private void ClampPosition()
     {
         if (playerCamera.gameObject.activeSelf)
@@ -65,6 +68,7 @@ public class PlayerMovement : MonoBehaviour
             transform.position = clampedPosition;
         }
     }
+
     private void SpeedControl()
     {
         if (playerCamera.gameObject.activeSelf)

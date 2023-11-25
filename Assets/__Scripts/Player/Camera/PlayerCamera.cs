@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Controls the player camera's rotation based on mouse input.
+/// </summary>
 public class PlayerCamera : MonoBehaviour
 {
     [SerializeField] private float sensX;
@@ -14,8 +17,8 @@ public class PlayerCamera : MonoBehaviour
 
     void Update()
     {
-     float mouseX = Input.GetAxisRaw("Mouse X") * sensX * Time.deltaTime;
-     float mouseY = Input.GetAxisRaw("Mouse Y") * sensY * Time.deltaTime;
+        float mouseX = Input.GetAxisRaw("Mouse X") * sensX * Time.deltaTime;
+        float mouseY = Input.GetAxisRaw("Mouse Y") * sensY * Time.deltaTime;
 
         yRotation += mouseX;
 
@@ -25,5 +28,4 @@ public class PlayerCamera : MonoBehaviour
         transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
         orientation.rotation = Quaternion.Euler(0, yRotation, 0);
     }
-
 }

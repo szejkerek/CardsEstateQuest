@@ -2,6 +2,9 @@ using DG.Tweening;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Manages difficulty buttons and the start panel.
+/// </summary>
 public class DifficultyButtonsController : Singleton<DifficultyButtonsController>
 {
     [SerializeField] GameObject startPanel;
@@ -12,12 +15,17 @@ public class DifficultyButtonsController : Singleton<DifficultyButtonsController
     List<DifficultyButton> difficultyButtons = new List<DifficultyButton>();
 
     bool startPanelAnimated = false;
+    Vector3 initScale;
+
     private void Start()
     {
         startPanel.SetActive(false);
         initScale = startPanel.transform.localScale;
     }
 
+    /// <summary>
+    /// Generates difficulty buttons based on the provided difficulties.
+    /// </summary>
     public void GenerateLevelButtons(CrudList<Difficulty> difficulties)
     {
         for (int i = 0; i < difficulties.Count; i++)
@@ -28,9 +36,11 @@ public class DifficultyButtonsController : Singleton<DifficultyButtonsController
         }
     }
 
+    /// <summary>
+    /// Manages the selected difficulty button.
+    /// </summary>
     public void ManageSelectedButton(DifficultyButton selectedButton)
     {
-
         foreach (var button in difficultyButtons)
         {
             button.DeselectButton();
@@ -42,7 +52,6 @@ public class DifficultyButtonsController : Singleton<DifficultyButtonsController
         AnimateShowStartPanel();
     }
 
-    Vector3 initScale;
     private void AnimateShowStartPanel()
     {
         if (startPanelAnimated)

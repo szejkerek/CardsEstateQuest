@@ -2,6 +2,9 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Manages and displays information about a parameter goal.
+/// </summary>
 public class ParameterGoal : MonoBehaviour
 {
     [Header("UI")]
@@ -12,13 +15,18 @@ public class ParameterGoal : MonoBehaviour
     [SerializeField] TextMeshProUGUI MaxValue;
     [SerializeField] TextMeshProUGUI ValueInfo;
 
+    /// <summary>
+    /// Gets the parameter rule associated with the goal.
+    /// </summary>
     public ParameterRule ParameterRule => parameterRule;
     ParameterRule parameterRule;
 
     float value = 0;
-
     int cardsContributedToValue = 0;
 
+    /// <summary>
+    /// Initializes the parameter goal with the specified parameter rule.
+    /// </summary>
     public void Init(ParameterRule parameterRule)
     {
         this.parameterRule = parameterRule;
@@ -26,6 +34,9 @@ public class ParameterGoal : MonoBehaviour
         UpdateParameterGoalUI();
     }
 
+    /// <summary>
+    /// Updates the UI for the parameter goal.
+    /// </summary>
     public void UpdateParameterGoalUI()
     {
         switch (parameterRule.GetValueType())
@@ -40,6 +51,10 @@ public class ParameterGoal : MonoBehaviour
         }
         ValueInfo.text = UpdateInfoText();
     }
+
+    /// <summary>
+    /// Updates the parameter value and UI based on a value to add and whether a card was destroyed.
+    /// </summary>
     public void UpdateParameter(float valueToAdd, bool cardDestroyed)
     {
         float addValue = cardDestroyed ? -valueToAdd : valueToAdd;
@@ -51,13 +66,16 @@ public class ParameterGoal : MonoBehaviour
                 break;
             case ParameterTypeEnum.Decimal:
             case ParameterTypeEnum.Percentage:
-                value = MovingAvarage(addValue);
+                value = MovingAverage(addValue);
                 break;
         }
 
         UpdateParameterGoalUI();
     }
 
+    /// <summary>
+    /// Checks if the condition of the parameter goal is accomplished.
+    /// </summary>
     public bool ConditionAcomplished()
     {
         return (value >= parameterRule.MinValue && value <= parameterRule.MaxValue);
@@ -77,36 +95,34 @@ public class ParameterGoal : MonoBehaviour
             Name.text = $"Name: {parameterRule.GetCategory()}";
         }
 
-        if(parameterRule.GetValueType() == ParameterTypeEnum.Percentage)
+        if (parameterRule.GetValueType() == ParameterTypeEnum.Percentage)
         {
-            MinValue.text = $"Min: {parameterRule.MinValue*100}%";
-            MaxValue.text = $"Max: {parameterRule.MaxValue*100}%";
+            MinValue.text = $"Min: {parameterRule.MinValue * 100}%";
+            MaxValue.text = $"Max: {parameterRule.MaxValue * 100}%";
         }
         else
         {
             MinValue.text = $"Min: {parameterRule.MinValue}";
             MaxValue.text = $"Max: {parameterRule.MaxValue}";
         }
-
     }
 
     private string UpdateInfoText()
     {
-
         if (value < parameterRule.MinValue)
         {
-            return $"Missing {ParameterRule.MinValue - value} to minimum!";
+            return $"Missing {parameterRule.MinValue - value} to minimum!";
         }
         else if (value > parameterRule.MaxValue)
         {
-            return $"Exceeded over {value - ParameterRule.MaxValue } from maximum!";
+            return $"Exceeded over {value - parameterRule.MaxValue} from maximum!";
         }
         return "DONE!";
     }
 
-    private float MovingAvarage(float newValue)
+    private float MovingAverage(float newValue)
     {
-        if(cardsContributedToValue == 0)
+        if (cardsContributedToValue == 0)
         {
             return 0;
         }
