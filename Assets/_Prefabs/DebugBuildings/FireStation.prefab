@@ -232,7 +232,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5091362286309938621}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spot (4)
   m_TagString: PossibleFountainSpot
   m_Icon: {fileID: 0}
@@ -262,7 +262,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7931507943753730470}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spot (5)
   m_TagString: PossibleFountainSpot
   m_Icon: {fileID: 0}
@@ -296,7 +296,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3520681445263854137, guid: e478292f536a7134e8e48cb62cf2be07, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4291976296259555459, guid: e478292f536a7134e8e48cb62cf2be07, type: 3}
       propertyPath: m_RootOrder
@@ -356,29 +356,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e478292f536a7134e8e48cb62cf2be07, type: 3}
---- !u!1 &6821353589848874443 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3520681445263854137, guid: e478292f536a7134e8e48cb62cf2be07, type: 3}
-  m_PrefabInstance: {fileID: 7958328855838971890}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6188368506094307185 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4291976296259555459, guid: e478292f536a7134e8e48cb62cf2be07, type: 3}
   m_PrefabInstance: {fileID: 7958328855838971890}
   m_PrefabAsset: {fileID: 0}
---- !u!208 &1175435857228658091
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6821353589848874443}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 8.091001, y: 7.3440003, z: 7.5600004}
-  m_MoveThreshold: 0.1
-  m_Carve: 0
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0.14, y: 7.3440003, z: 1.235}
-  m_TimeToStationary: 0.5

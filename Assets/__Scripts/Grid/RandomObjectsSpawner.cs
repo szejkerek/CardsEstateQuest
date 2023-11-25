@@ -23,9 +23,17 @@ public class RandomObjectsSpawner : MonoBehaviour
         fountains = LoadComponent(gm.FoutainChance, gm.Fountains, "PossibleFountainSpot");
         
        PlaceObjects(trees);
-         PlaceFountains(fountains);
+       PlaceFountains(fountains);
+       PlacePedestriants();
     }
 
+    private void PlacePedestriants()
+    {
+        for (int i = 0; i < pedoCount; i++)
+        {
+            Pedestrian temp = Instantiate(pedo, Pedestrian.RandomSphere(transform.position, 2.5f), Quaternion.identity);
+        }
+    }
 
     private CardObjectCompontents LoadComponent(float spawnChance, List<GameObject> models, string tag)
     {
