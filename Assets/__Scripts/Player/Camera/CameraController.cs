@@ -1,73 +1,69 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.XR;
 
-/// <summary>
-/// Controls camera movement, rotation, and zoom based on input actions.
-/// </summary>
 public class CameraController : MonoBehaviour
 {
-    private Vector2 _delta;
-    private float _zoomDelta;
+    [SerializeField] private Transform cameraTransform;
 
-    private bool _isZooming;
-    private bool _isMoving;
-    private bool _isRotating;
-    private bool _isBusy;
+    [SerializeField] private float movementSpeed;
+    [SerializeField] private float movementTime;
 
-    private float _xRotation;
+    [SerializeField] private Vector3 newPosition;
+    [SerializeField] private Quaternion newRotation;
+    [SerializeField] private Vector3 newZoom;
 
-    [SerializeField] private float movementSpeed = 10.0f;
-    [SerializeField] private float rotationSpeed = 2f;
-    [SerializeField] private float zoomSpeed = 1f;
+    [SerializeField] private float rotationAmount;
+    [SerializeField] private Vector3 zoomAmount;
 
-    private void Awake()
+    private void Start()
     {
-        _xRotation = transform.rotation.eulerAngles.x;
+        newPosition = transform.position;
+        newRotation = transform.rotation;
+        newZoom = cameraTransform.localPosition;    
     }
 
-    public void OnLook(InputAction.CallbackContext context)
+    private void FixedUpdate()
     {
-        _delta = context.ReadValue<Vector2>();
+        HandleMovementInput();
     }
-
-    public void OnRotate(InputAction.CallbackContext context)
+   
+    void HandleMovementInput()
     {
-        if (_isBusy) return;
-
-        _isRotating = context.started || context.performed;
-    }
-
-    public void OnZoom(InputAction.CallbackContext context)
-    {
-        if (_isBusy) return;
-
-        _zoomDelta = context.ReadValue<Vector2>().y / 100 * zoomSpeed;
-        _isZooming = context.started || context.performed;
-    }
-
-    public void OnMove(InputAction.CallbackContext context)
-    {
-        if (_isBusy) return;
-
-        _isMoving = context.started || context.performed;
-    }
-
-    private void LateUpdate()
-    {
-        if (_isMoving)
-        {
-            Vector3 position = transform.right * (_delta.x * -movementSpeed);
-            position += transform.up * (_delta.y * -movementSpeed);
-            transform.position += position * Time.deltaTime;
+        if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow) )
+            {
+            newPosition += (transform.forward * movementSpeed);
         }
-        if (_isRotating)
+        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
         {
-            transform.Rotate(new Vector3(_xRotation, -_delta.x * rotationSpeed * Time.deltaTime, 0.0f));
-            transform.rotation = Quaternion.Euler(_xRotation, transform.rotation.eulerAngles.y, 0.0f);
+            newPosition += (transform.forward * -movementSpeed);
         }
-        if (_isZooming)
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
-            Camera.main.orthographicSize = Mathf.Clamp(Camera.main.orthographicSize - _zoomDelta * Time.deltaTime, 1f, 30f);
+            newPosition += (transform.right * movementSpeed);
         }
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+        {
+            newPosition += (transform.right * -movementSpeed);
+        }
+        if (Input.GetKey(KeyCode.Q))
+        {
+            newRotation *= Quaternion.Euler(Vector3.up * rotationAmount);
+        }
+        if (Input.GetKey(KeyCode.E))
+        {
+            newRotation *= Quaternion.Euler(Vector3.up * -rotationAmount);
+        }
+        if (Input.GetKey(KeyCode.R))
+        {
+            newZoom += zoomAmount;
+        }
+        if (Input.GetKey(KeyCode.F))
+        {
+            newZoom -= zoomAmount;
+        }
+        transform.position = Vector3.Lerp(transform.position, newPosition, Time.deltaTime * movementTime);
+        transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, Time.deltaTime * movementTime);
+        cameraTransform.localPosition = Vector3.Lerp(cameraTransform.localPosition, newZoom, Time.deltaTime * movementTime);
     }
 }
