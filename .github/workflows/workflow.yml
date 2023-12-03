@@ -3,6 +3,7 @@ name: Unity Continuous Integration Workflow
 on:
   push:
     branches:
+      - main
       - develop
 
 jobs:
