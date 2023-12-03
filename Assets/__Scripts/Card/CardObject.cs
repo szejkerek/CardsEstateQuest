@@ -16,13 +16,13 @@ public class CardObject : ICard
     private List<ParameterValue> parameters;
     private GameObject model;
 
-    public CardObject(CardFigure _fiugure,
+    public CardObject(CardFigure _figure,
                       CardColor _color,
                       Sprite _sprite,
                       List<ParameterValue> _cardParameters,
                       GameObject _model)
     {
-        figure = _fiugure;
+        figure = _figure;
         color = _color;
         pictogram = _sprite;
         parameters = _cardParameters;

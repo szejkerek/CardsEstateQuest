@@ -47,10 +47,6 @@ public class GridItem : MonoBehaviour
         currentBuilding = Instantiate(card.Model, transform.position, transform.rotation);
         Transform meshChild = currentBuilding.transform.Find("Mesh"); //String yikes TODO: Zmienić na referencje na postawie modelu
 
-        DestroyWithBomb bomb = meshChild.gameObject.AddComponent<DestroyWithBomb>();
-        bomb.BombUsed += OnBombUsed;
-        bomb.BombUsed += GameplayManager.Instance.HudManager.UpdateBombCount;
-
         meshChild.gameObject.AddComponent<BoxCollider>();
 
         GameplayManager.Instance.ParameterGoalManager.UpdateGlobalParameters(card.Parameters);

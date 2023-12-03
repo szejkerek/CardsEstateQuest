@@ -101,7 +101,6 @@ GameObject:
   - component: {fileID: 2343400197808949173}
   - component: {fileID: 7848338110675901190}
   - component: {fileID: 6953942137679362061}
-  - component: {fileID: 9076316756337238263}
   m_Layer: 6
   m_Name: FireStation
   m_TagString: Untagged
@@ -179,20 +178,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &9076316756337238263
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3433141152379345239}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56a3bf8a7cc68524095c9dfbd156c123, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pedo: {fileID: 1228013577151872244, guid: c220a63ea1a42024caffa22c954bd445, type: 3}
-  pedoCount: 5
 --- !u!1 &3537530702057560089
 GameObject:
   m_ObjectHideFlags: 0

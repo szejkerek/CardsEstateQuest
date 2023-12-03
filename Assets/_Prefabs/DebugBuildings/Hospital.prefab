@@ -191,7 +191,6 @@ GameObject:
   - component: {fileID: 8252860980485896260}
   - component: {fileID: 1962453046105615338}
   - component: {fileID: 8057625489936757527}
-  - component: {fileID: 8319243988693741187}
   m_Layer: 6
   m_Name: Hospital
   m_TagString: Untagged
@@ -269,20 +268,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8319243988693741187
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8277453645499062384}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56a3bf8a7cc68524095c9dfbd156c123, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pedo: {fileID: 1228013577151872244, guid: c220a63ea1a42024caffa22c954bd445, type: 3}
-  pedoCount: 5
 --- !u!1001 &7863565594839715979
 PrefabInstance:
   m_ObjectHideFlags: 0
