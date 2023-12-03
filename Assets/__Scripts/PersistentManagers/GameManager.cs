@@ -5,19 +5,6 @@ using UnityEngine.AddressableAssets;
 public class GameManager : Singleton<GameManager>
 {
     [SerializeField] DifficultySO defaultDifficulty;
-
-    [SerializeField] AssetLabelReference treeLabel;
-    public float TreeChance => treeChance;
-    [SerializeField, Range(0f, 1f)] float treeChance;
-    public List<GameObject> Trees => trees;
-    List<GameObject> trees;
-
-    [SerializeField] AssetLabelReference fountainLabel;
-    public float FoutainChance => fountainChance;
-    [SerializeField, Range(0f, 1f)] float fountainChance;
-    public List<GameObject> Fountains => fountains;
-    List<GameObject> fountains;
-
     public IDifficulty Difficulty => difficulty;
     IDifficulty difficulty;
 
@@ -28,10 +15,6 @@ public class GameManager : Singleton<GameManager>
         { 
            SetDifficulty(defaultDifficulty);
         }
-
-        DefaultLoader<GameObject> loader = new DefaultLoader<GameObject>();
-        trees = loader.Load(treeLabel);
-        fountains = loader.Load(fountainLabel);
     }
 
     public void SetDifficulty(IDifficulty difficulty)

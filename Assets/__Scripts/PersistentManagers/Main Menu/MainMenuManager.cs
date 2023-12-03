@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
@@ -7,7 +8,7 @@ public class MainMenuManager : Singleton<MainMenuManager>
     DifficultyButtonsController buttonController;
     [SerializeField] private TMP_InputField nicknameInput;
 
-    CrudList<Difficulty> difficulties = new CrudList<Difficulty>();
+    List<Difficulty> difficulties = new List<Difficulty>();
     [SerializeField] AssetLabelReference difficultyLabel;
 
     private void Start()
@@ -20,14 +21,14 @@ public class MainMenuManager : Singleton<MainMenuManager>
 
     private void LoadDifficulties()
     {
-        CrudList<IDifficulty> tempDifficulties = new CrudList<IDifficulty>();
-        tempDifficulties.LoadList(difficultyLabel);
+        List<IDifficulty> tempDifficulties = new List<IDifficulty>();
+        tempDifficulties = DefaultLoader<IDifficulty>.Load(difficultyLabel);
         foreach (var difficulty in tempDifficulties)
         {
             Difficulty tempDiff = new Difficulty(difficulty);
             if (tempDiff.IsValid())
             {
-                difficulties.AddItem(tempDiff);
+                difficulties.Add(tempDiff);
             }
         }
     }

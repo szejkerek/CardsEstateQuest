@@ -5,9 +5,9 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
-public class DefaultLoader<T>
+public static class DefaultLoader<T>
 {
-    public List<T> Load(string path)
+    public static List<T> Load(string path)
     {
         object[] cards = Resources.LoadAll(path, typeof(T));
         List<T> result = cards.OfType<T>().ToList();
@@ -19,7 +19,7 @@ public class DefaultLoader<T>
         return result;
     }
 
-    public List<T> Load(AssetLabelReference label)
+    public static List<T> Load(AssetLabelReference label)
     {
         List<T> result = new List<T>();
         var loadOperation = Addressables.LoadAssetsAsync<T>(label, result.Add).WaitForCompletion();

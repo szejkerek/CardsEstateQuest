@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
@@ -14,12 +15,12 @@ public class GameplayManager : Singleton<GameplayManager>
     ParameterGoalManager parameterGoalManager;
 
     EndMenuManager endMenu;
-    CrudList<ICard> cardList = new CrudList<ICard>();    
+    List<ICard> cardList = new List<ICard>();    
 
     protected override void Awake()
     {
         base.Awake();
-        cardList.LoadList(defaultCardsLabel);
+        cardList = DefaultLoader<ICard>.Load(defaultCardsLabel);
         endMenu = GetComponent<EndMenuManager>(); 
     }
 
@@ -36,7 +37,7 @@ public class GameplayManager : Singleton<GameplayManager>
 
     public void SelectCard()
     {
-        selectedCard = new CardObject(cardList.GetRandomItem());
+        selectedCard = new CardObject(cardList.SelectRandomElement());
         Debug.Log(selectedCard.Model.name + " card selected");
     }
 
