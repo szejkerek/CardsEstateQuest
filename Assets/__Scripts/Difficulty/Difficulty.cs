@@ -29,7 +29,6 @@ public class Difficulty : IDifficulty
         _name = difficultySO.Name;
         _icon = difficultySO.Icon;
         _cardParameters = difficultySO.CardParameters;
-        _numberOfBombs = difficultySO.NumberOfBombs;
     }
 
     public bool IsValid()

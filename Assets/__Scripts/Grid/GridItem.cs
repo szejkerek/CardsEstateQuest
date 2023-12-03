@@ -3,8 +3,6 @@ using UnityEngine.AI;
 
 public class GridItem : MonoBehaviour
 {
-
-
     [SerializeField] bool isTaken = false;
     [SerializeField] Material _hoverMaterial;
     Material _initalMaterial;
@@ -56,16 +54,7 @@ public class GridItem : MonoBehaviour
 
         Debug.Log("Placed");
     }
-    public void OnBombUsed()
-    {
-        if (!GameplayManager.Instance.UseBomb())
-            return;
 
-        isTaken = false;
-        Destroy(currentBuilding);
-
-        RebuildNavMesh();
-    }
     private static void RebuildNavMesh()
     {
         NavMeshSurface navMesh = FindObjectOfType<NavMeshSurface>();
