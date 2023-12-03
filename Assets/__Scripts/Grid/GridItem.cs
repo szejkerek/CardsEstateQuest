@@ -50,17 +50,6 @@ public class GridItem : MonoBehaviour
         GameplayManager.Instance.ParameterGoalManager.UpdateGlobalParameters(card.Parameters);
         GameplayManager.Instance.DeselectCard();
 
-        RebuildNavMesh();
-
         Debug.Log("Placed");
-    }
-
-    private static void RebuildNavMesh()
-    {
-        NavMeshSurface navMesh = FindObjectOfType<NavMeshSurface>();
-        if (navMesh != null)
-        {
-            navMesh.BuildNavMesh();
-        }
     }
 }
