@@ -16,16 +16,11 @@ MonoBehaviour:
   <Color>k__BackingField: 0
   <Pictogram>k__BackingField: {fileID: 21300000, guid: cbaeed03e5416aa4bae23110b63a0c7d, type: 3}
   <Parameters>k__BackingField:
-  - _categorySO: {fileID: 11400000, guid: 12c031012ad53d04686b1d4309213ca0, type: 2}
-    value: 0.3
-  - _categorySO: {fileID: 11400000, guid: 3b2397d0a2367714594dcf43ef07a21c, type: 2}
-    value: 0.1
   - _categorySO: {fileID: 11400000, guid: c596fec365df5fe4da8f17240d65c4f3, type: 2}
-    value: 0.7
+    value: 2
   - _categorySO: {fileID: 11400000, guid: a17ade7fd8e35b14fb053738126533a8, type: 2}
-    value: 0.1
-  - _categorySO: {fileID: 11400000, guid: 573e3caa74a04814e9d843096cd68cbf, type: 2}
-    value: 3
-  - _categorySO: {fileID: 11400000, guid: 71e7d46cfbad04145b5cbd56b3016ad9, type: 2}
-    value: 12
+    value: 5
   <Model>k__BackingField: {fileID: 3433141152379345239, guid: a094935675d512b4ca6fdcb4c2a339d7, type: 3}
+  <Image>k__BackingField: {fileID: 21300000, guid: 37e5d8d66e5e6544991c60dbe02ebddf, type: 3}
+  <Width>k__BackingField: 2
+  <Length>k__BackingField: 3

@@ -15,5 +15,12 @@ MonoBehaviour:
   <Figure>k__BackingField: 0
   <Color>k__BackingField: 0
   <Pictogram>k__BackingField: {fileID: 0}
-  <Parameters>k__BackingField: []
+  <Parameters>k__BackingField:
+  - _categorySO: {fileID: 11400000, guid: c596fec365df5fe4da8f17240d65c4f3, type: 2}
+    value: 4
+  - _categorySO: {fileID: 11400000, guid: a17ade7fd8e35b14fb053738126533a8, type: 2}
+    value: 7
   <Model>k__BackingField: {fileID: 8277453645499062384, guid: 996c0248f48826f4cae1acc99d003897, type: 3}
+  <Image>k__BackingField: {fileID: 21300000, guid: 0fa6795112d07da48ace12c67a60b72b, type: 3}
+  <Width>k__BackingField: 2
+  <Length>k__BackingField: 3

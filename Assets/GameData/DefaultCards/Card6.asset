@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4da75985d87a61a47a89b6f6dd3cc25f, type: 3}
-  m_Name: Card2
+  m_Name: Card6
   m_EditorClassIdentifier: 
   <Figure>k__BackingField: 0
   <Color>k__BackingField: 0
-  <Pictogram>k__BackingField: {fileID: 21300000, guid: ad4dcac393f63f3468f6d9ff1652732e, type: 3}
+  <Pictogram>k__BackingField: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   <Parameters>k__BackingField:
   - _categorySO: {fileID: 11400000, guid: c596fec365df5fe4da8f17240d65c4f3, type: 2}
-    value: 7
+    value: 2
   - _categorySO: {fileID: 11400000, guid: a17ade7fd8e35b14fb053738126533a8, type: 2}
-    value: 4
-  <Model>k__BackingField: {fileID: 4384273139518526542, guid: 1c1f7cb2afbc6d749befa6dd4c8ed624, type: 3}
-  <Image>k__BackingField: {fileID: 21300000, guid: c32f4300464457c44b16b6e09b95150c, type: 3}
+    value: 3
+  <Model>k__BackingField: {fileID: 8277453645499062384, guid: 996c0248f48826f4cae1acc99d003897, type: 3}
+  <Image>k__BackingField: {fileID: 21300000, guid: a4b7da04c50345245b1c39a586679b9e, type: 3}
   <Width>k__BackingField: 2
   <Length>k__BackingField: 1

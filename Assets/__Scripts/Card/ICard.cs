@@ -9,4 +9,7 @@ public interface ICard
     Sprite Pictogram { get; }
     List<ParameterValue> Parameters { get; }
     GameObject Model { get; }
+    int Width { get; }
+    int Length { get; }
+    Sprite Image { get; }
 }
