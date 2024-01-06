@@ -7,19 +7,20 @@ public class CardHolder : MonoBehaviour
 {
     [SerializeField ]private  List<CardSO> cards;
     [SerializeField] private GameObject cardPrefab;
-    [SerializeField] private Transform spawnPosition;
+    [SerializeField] private Transform spawnPosition1;
+    [SerializeField] private Transform spawnPosition2;
 
-    private GameplayManager gameplayManager;
     void Start()
     {
          List<CardSO> selectedCards = SelectRandomCards(4);
         foreach (CardSO card in selectedCards)
         {
-            AddCardToHolder(card);
+            AddCardToHolder(card, spawnPosition1);
+                AddCardToHolder(card, spawnPosition2);
         }
     }
 
-    void AddCardToHolder(CardSO card)
+    void AddCardToHolder(CardSO card, Transform spawnPosition)
     {
         GameObject cardInstance = Instantiate(cardPrefab, spawnPosition);
       cardInstance.GetComponent<Image>().sprite = card.Image;
