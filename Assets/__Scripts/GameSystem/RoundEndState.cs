@@ -9,11 +9,12 @@ public class RoundEndState : IRoundState
         if (roundManager.GetRoundNumber() < 3)
         {
             roundManager.DeterimneRoundWinner();
+            roundManager.UnfoldPlayers();
             roundManager.TransitionTo(roundManager.RoundPreparationState);
         }
         else
         {
-            roundManager.DetermineGameWinner();
+            roundManager.TransitionTo(roundManager.GameEndState);
         }
     }
 }
