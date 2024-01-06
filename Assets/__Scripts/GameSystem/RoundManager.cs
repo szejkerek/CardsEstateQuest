@@ -9,6 +9,7 @@ public class RoundManager : MonoBehaviour
 
     public RoundPreparationState RoundPreparationState;
     public RoundPlayState RoundPlayState;
+    public RoundEndState RoundEndState;
 
     [SerializeField] private List<IPlayer> _players;
 
@@ -21,6 +22,7 @@ public class RoundManager : MonoBehaviour
         winnersIndexes = new List<int>();
         RoundPreparationState =  new RoundPreparationState();
         RoundPlayState = new RoundPlayState();
+        RoundEndState = new RoundEndState();
         currentState = RoundPreparationState;
     }
 
@@ -88,7 +90,7 @@ public class RoundManager : MonoBehaviour
         }
     }
 
-    public void DeterimneWinner()
+    public void DeterimneRoundWinner()
     {
         float bestScore = -1;
         for (int i = 0; i < _players.Count; i++) 
@@ -106,6 +108,26 @@ public class RoundManager : MonoBehaviour
                 winnersIndexes[i] = i;
             }
         }
+    }
+
+    public List<string> DetermineGameWinner()
+    {
+        int mostWins = -1;
+        List<string> winners = new List<string>();
+        foreach(IPlayer player in _players)
+        {
+            mostWins = player.GetPlayerWins();
+        }
+
+        foreach (IPlayer player in _players) 
+        { 
+            if (player.GetPlayerWins() == mostWins)
+            {
+                winners.Add(player.GetPlayerName());
+            }
+        }
+
+        return winners;
     }
 
     public void FoldActivePlayer()
@@ -127,8 +149,30 @@ public class RoundManager : MonoBehaviour
         }
     }
 
+    public bool AllPlayersHasFolded()
+    {
+        foreach(IPlayer player in _players)
+        {
+            if (!player.HasFolded())
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
     public void ResetWinnerList()
     {
         winnersIndexes.Clear();
+    }
+
+    public void IncreaseRoundNumber()
+    {
+        roundNumber++;   
+    }
+
+    public int GetRoundNumber()
+    {
+        return roundNumber;
     }
 }
