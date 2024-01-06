@@ -11,16 +11,18 @@ public class GameplayManager : Singleton<GameplayManager>
     public HudManager HudManager => hudManager;
     HudManager hudManager;
 
+    public CardHolder CardHolder => cardHolder;
+    CardHolder cardHolder;
+
     public ParameterGoalManager ParameterGoalManager => parameterGoalManager;
     ParameterGoalManager parameterGoalManager;
 
-    EndMenuManager endMenu;
-    List<ICard> cardList = new List<ICard>();    
+    EndMenuManager endMenu;  
 
     protected override void Awake()
     {
         base.Awake();
-        cardList = DefaultLoader<ICard>.Load(defaultCardsLabel);
+   
         endMenu = GetComponent<EndMenuManager>(); 
     }
 
@@ -28,6 +30,7 @@ public class GameplayManager : Singleton<GameplayManager>
     {
         hudManager = GetComponent<HudManager>();
         parameterGoalManager = GetComponent<ParameterGoalManager>();
+        cardHolder = GetComponent<CardHolder>();
     }
 
     public void ShowEndMenu()
@@ -35,15 +38,17 @@ public class GameplayManager : Singleton<GameplayManager>
         endMenu.Show(parameterGoalManager.DidWin());
     }
 
-    public void SelectCard()
+    public void SetSelectedCard(CardObject card)
     {
-        selectedCard = new CardObject(cardList.SelectRandomElement());
+        selectedCard = card;
         Debug.Log(selectedCard.Model.name + " card selected");
     }
 
     public void DeselectCard()
     {
+        cardHolder.RemoveCard(selectedCard);
         selectedCard = null;
+        
     }
 
 }
