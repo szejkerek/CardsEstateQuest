@@ -15,6 +15,7 @@ public class RoundUIManager : MonoBehaviour
     [SerializeField] TMP_Text activePlayerScore;
     [SerializeField] TMP_Text activePlayerWins;
     [SerializeField] TMP_Text endOfGameInfo;
+    [SerializeField] TMP_Text role;
 
     private bool gameIsPaused  = false;
 
@@ -75,6 +76,10 @@ public class RoundUIManager : MonoBehaviour
     public void SetEndOfGameInfoText(string endOfGameInfoText)
     {
         endOfGameInfo.text = endOfGameInfoText;
+    }
+    public void SetRoleText(string r)
+    {
+        role.text = r;
     }
 
     public void ShowEndGameUI()

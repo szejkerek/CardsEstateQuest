@@ -20,7 +20,7 @@ MonoBehaviour:
     value: 2
   - _categorySO: {fileID: 11400000, guid: a17ade7fd8e35b14fb053738126533a8, type: 2}
     value: 10
-  <Model>k__BackingField: {fileID: 4384273139518526542, guid: 1c1f7cb2afbc6d749befa6dd4c8ed624, type: 3}
+  <Model>k__BackingField: {fileID: 8353106954091822627, guid: d898356ae0d25f84cb9c95f2be9cd112, type: 3}
   <Image>k__BackingField: {fileID: 21300000, guid: a3e2e8ccf038c5c41912d11b697a4bc3, type: 3}
   <Width>k__BackingField: 2
   <Length>k__BackingField: 2

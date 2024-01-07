@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class RoundManager : MonoBehaviour
 {
+    [SerializeField] GameObject cardHolder1;
+    [SerializeField] GameObject cardHolder2;
     public int RoundNumber => roundNumber;
 
     public RoundPreparationState RoundPreparationState;
@@ -34,6 +36,8 @@ public class RoundManager : MonoBehaviour
         RoundEndState = new RoundEndState();
         GameEndState = new GameEndState();
         currentState = RoundPreparationState;
+        playerOne.SetRandomRole();
+        playerTwo.SetRandomRole();
     }
 
     void Update()
@@ -52,10 +56,14 @@ public class RoundManager : MonoBehaviour
         if (playerToActivate == 1) 
         {
             playerOne.SetAsActive();
+            cardHolder1.SetActive(true);
+            cardHolder2.SetActive(false);
         }
         else
         {
             playerTwo.SetAsActive();
+            cardHolder1.SetActive(false);
+            cardHolder2.SetActive(true);
         }
 
         UpdateActivePlayerUIInfo();
@@ -79,6 +87,21 @@ public class RoundManager : MonoBehaviour
         uiManager.SetAtivePlayerScoreText(activePlayer.GetPlayerScore().ToString());
         uiManager.SetctivePlayerWinsText(activePlayer.GetPlayerWins().ToString());
         uiManager.SetActivePlayerNameText(activePlayer.GetPlayerName());
+        uiManager.SetRoleText(activePlayer.GetRole().ToString());
+
+    }
+    public void AddPoint(int green, int building)
+    {
+        IPlayer activePlayer = GetActivePlayer();
+        if(activePlayer.GetRole() == PlayerRole.Eco)
+        {
+            activePlayer.AddPoint(green);
+        }
+        else
+        {
+            activePlayer.AddPoint(building);
+        }
+   
 
     }
 
@@ -115,12 +138,16 @@ public class RoundManager : MonoBehaviour
             playerOne.SetAsUnactive();
             playerTwo.SetAsActive();
             UpdateActivePlayerUIInfo();
+            cardHolder1.SetActive(false);
+            cardHolder2.SetActive(true);
         }
         else if (activePlayer == playerTwo && !playerOne.HasFolded())
         {
             playerTwo.SetAsUnactive();
             playerOne.SetAsActive();
             UpdateActivePlayerUIInfo();
+            cardHolder1.SetActive(true);
+            cardHolder2.SetActive(false);
         }
     }
 

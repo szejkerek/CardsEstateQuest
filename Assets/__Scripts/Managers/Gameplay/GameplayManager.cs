@@ -17,6 +17,11 @@ public class GameplayManager : Singleton<GameplayManager>
     public ParameterGoalManager ParameterGoalManager => parameterGoalManager;
     ParameterGoalManager parameterGoalManager;
 
+    public RoundManager RoundManager => roundManager;
+    RoundManager roundManager;
+
+    [SerializeField] public GridManager GridManager;
+
     EndMenuManager endMenu;  
 
     protected override void Awake()
@@ -31,6 +36,7 @@ public class GameplayManager : Singleton<GameplayManager>
         hudManager = GetComponent<HudManager>();
         parameterGoalManager = GetComponent<ParameterGoalManager>();
         cardHolder = GetComponent<CardHolder>();
+        roundManager = GetComponent<RoundManager>();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
     }
 
     public void ShowEndMenu()
@@ -48,6 +54,9 @@ public class GameplayManager : Singleton<GameplayManager>
     {
         cardHolder.RemoveCard(selectedCard);
         selectedCard = null;
+        roundManager.IncreaseRoundNumber();
+        roundManager.ActivateNextPlayer();
+        
         
     }
 

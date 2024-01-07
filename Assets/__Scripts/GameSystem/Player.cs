@@ -1,7 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum PlayerRole
+{
+    Eco,
+    Developer
+}
 public class Player : MonoBehaviour, IPlayer
 {
     [SerializeField] private string _playerName;
@@ -10,6 +16,7 @@ public class Player : MonoBehaviour, IPlayer
     private int numberOfWins;
     private bool hasFolded;
     private bool isActive;
+    private PlayerRole role;
 
     private void Awake()
     {
@@ -32,6 +39,11 @@ public class Player : MonoBehaviour, IPlayer
     public int GetPlayerWins()
     {
         return numberOfWins;
+    }
+
+    public void AddPoint(int point)
+    {
+        score+=point;
     }
 
     public bool HasFolded()
@@ -67,5 +79,22 @@ public class Player : MonoBehaviour, IPlayer
     public void SetAsUnfolded()
     {
         hasFolded = false;
+    }
+
+    public PlayerRole GetRole()
+    {
+        return role;
+    }
+    private static System.Random random = new System.Random();
+    public void SetRandomRole()
+    {
+        Array values = Enum.GetValues(typeof(PlayerRole));
+       
+        PlayerRole randomRole = (PlayerRole)values.GetValue(random.Next(values.Length));
+        role = randomRole;
+    }
+    public void SetRole(PlayerRole role)
+    {
+        this.role = role;
     }
 }
