@@ -7,19 +7,49 @@ using UnityEngine;
 public class RoundUIManager : MonoBehaviour
 {
     [SerializeField] GameObject roundUI;
-    [SerializeField] GameObject EndGameUI;
+    [SerializeField] GameObject endGameUI;
+    [SerializeField] GameObject pauseMenuUI;
 
     [SerializeField] TMP_Text roundNumber;
     [SerializeField] TMP_Text activePlayerName;
     [SerializeField] TMP_Text activePlayerScore;
     [SerializeField] TMP_Text activePlayerWins;
-
     [SerializeField] TMP_Text endOfGameInfo;
+
+    private bool gameIsPaused  = false;
 
     private void Awake()
     {
         roundUI.SetActive(true);
-        EndGameUI.SetActive(false);
+        endGameUI.SetActive(false);
+        pauseMenuUI.SetActive(false);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.Escape) && (roundUI.active || pauseMenuUI.active))
+        {
+            if(gameIsPaused) 
+            {
+                Resume();
+            }
+            else
+            {
+                Pause();
+            }
+        }
+    }
+
+    public void Resume()
+    {
+        pauseMenuUI.SetActive(false);
+        gameIsPaused = false;
+    }
+
+    public void Pause()
+    {
+        pauseMenuUI.SetActive(true);
+        gameIsPaused = true;
     }
 
     public void SetRoundNumberText(string roundNumberText)
@@ -50,7 +80,7 @@ public class RoundUIManager : MonoBehaviour
     public void ShowEndGameUI()
     {
         roundUI.SetActive(false);
-        EndGameUI.SetActive(true);
+        endGameUI.SetActive(true);
     }
 }
 
