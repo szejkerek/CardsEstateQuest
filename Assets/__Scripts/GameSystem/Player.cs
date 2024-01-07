@@ -41,6 +41,7 @@ public class Player : MonoBehaviour, IPlayer
         return numberOfWins;
     }
 
+   
     public void AddPoint(int point)
     {
         score+=point;

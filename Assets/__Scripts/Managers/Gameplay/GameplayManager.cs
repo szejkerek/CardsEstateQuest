@@ -54,10 +54,10 @@ public class GameplayManager : Singleton<GameplayManager>
     {
         cardHolder.RemoveCard(selectedCard);
         selectedCard = null;
-        roundManager.IncreaseRoundNumber();
+
         roundManager.ActivateNextPlayer();
-        
-        
+
+
     }
 
 }

@@ -764,7 +764,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.23911765, y: 0.3696438, z: -0.09904577, w: 0.89239913}
-  m_LocalPosition: {x: 2.38, y: 1.55, z: 1.58}
+  m_LocalPosition: {x: -2, y: 11, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 50062681}
@@ -853,6 +853,7 @@ MonoBehaviour:
   activePlayerScore: {fileID: 111838487}
   activePlayerWins: {fileID: 110417531}
   endOfGameInfo: {fileID: 6858865119769099134}
+  role: {fileID: 0}
 --- !u!1 &1252689399
 GameObject:
   m_ObjectHideFlags: 0
@@ -966,6 +967,7 @@ MonoBehaviour:
   activePlayerScore: {fileID: 111838487}
   activePlayerWins: {fileID: 110417531}
   endOfGameInfo: {fileID: 6858865119769099134}
+  role: {fileID: 0}
 --- !u!4 &1587228951
 Transform:
   m_ObjectHideFlags: 0
@@ -1171,6 +1173,14 @@ PrefabInstance:
       propertyPath: cardHolder2
       value: 
       objectReference: {fileID: 400345770}
+    - target: {fileID: 7659888770948953012, guid: f6e76cb27882cde43a4d8180df37a8d0, type: 3}
+      propertyPath: gridSize.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7659888770948953012, guid: f6e76cb27882cde43a4d8180df37a8d0, type: 3}
+      propertyPath: gridSize.y
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8625496192948140317, guid: f6e76cb27882cde43a4d8180df37a8d0, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -752

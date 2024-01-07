@@ -156,15 +156,19 @@ public class RoundManager : MonoBehaviour
         if(playerOne.GetPlayerScore() > playerTwo.GetPlayerScore()) 
         {
             previousRoundWinners.Add(playerOne);
+            playerOne.RegisterWin();
         }
         else if (playerOne.GetPlayerScore() < playerTwo.GetPlayerScore())
         {
             previousRoundWinners.Add(playerTwo);
+            playerTwo.RegisterWin();
         }
         else
         {
             previousRoundWinners.Add(playerOne);
             previousRoundWinners.Add(playerTwo);
+            playerOne.RegisterWin();
+                playerTwo.RegisterWin();
         }
     }
 
