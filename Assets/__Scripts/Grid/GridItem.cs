@@ -91,6 +91,16 @@ public class GridItem : MonoBehaviour
         Transform meshChild = currentBuilding.transform.Find("Mesh"); //String yikes TODO: Zmienić na referencje na postawie modelu
        
         meshChild.gameObject.AddComponent<BoxCollider>();
+        
+        TooltipTrigger tooltip = meshChild.gameObject.AddComponent<TooltipTrigger>();
+        tooltip.header = cardObject.Model.name;
+        string text = string.Empty;
+        foreach (ParameterValue param in cardObject.Parameters)
+        {
+            string line = $"{param.GetCategory()}: {param.Value}\n";
+            text += line;
+        }
+        tooltip.content = text;
 
         CalculateAverageParameters();
         GameplayManager.Instance.DeselectCard();

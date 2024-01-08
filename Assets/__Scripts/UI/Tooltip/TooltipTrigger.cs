@@ -8,6 +8,16 @@ public class TooltipTrigger : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     public string header;
     [TextArea(3, 1)] public string content;
 
+    private void OnMouseEnter()
+    {
+        TooltipManager.Instance.Show(content, header);
+    }
+
+    private void OnMouseExit()
+    {
+        TooltipManager.Instance.Hide();
+    }
+
     public void OnPointerEnter(PointerEventData eventData)
     {
         TooltipManager.Instance.Show(content, header);
