@@ -17,6 +17,15 @@ public class CardItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public void Initialize(CardObject _card)
     {
         card = _card;
+        TooltipTrigger tooltip = gameObject.AddComponent<TooltipTrigger>();
+        tooltip.header = card.Model.name;
+        string text = string.Empty;
+        foreach(ParameterValue param in card.Parameters)
+        {
+            string line = $"{param.GetCategory()}: {param.Value}\n";
+            text += line;
+        }
+        tooltip.content = text;
     }
 
     public void onClick()
