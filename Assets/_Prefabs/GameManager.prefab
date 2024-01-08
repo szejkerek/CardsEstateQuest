@@ -33,7 +33,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1671, y: 0}
+  m_AnchoredPosition: {x: 1304, y: -66}
   m_SizeDelta: {x: 238.865, y: 101}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1186716386
@@ -710,7 +710,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -862.1907, y: -553.1328}
+  m_AnchoredPosition: {x: -752, y: -489.5}
   m_SizeDelta: {x: 238.865, y: 101}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3158785925165148419
@@ -3443,6 +3443,7 @@ GameObject:
   - component: {fileID: 7312577583534258753}
   - component: {fileID: 7115802896434919639}
   - component: {fileID: 5871446677315373783}
+  - component: {fileID: 1231621221}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3500,7 +3501,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 2097753518464822301, guid: 32d13ee0d68da9b468f55b78f789d0e9, type: 3}
   gridContainer: {fileID: 8426006572340489954}
-  gridSize: {x: 2, y: 2}
+  gridSize: {x: 5, y: 5}
   gridSpacing: {x: 5, y: 5}
 --- !u!114 &4698059220224351415
 MonoBehaviour:
@@ -3593,6 +3594,27 @@ MonoBehaviour:
   - {fileID: 11400000, guid: da7760118d0e51740904d94d4116aeea, type: 2}
   cardPrefab: {fileID: 1166810865697286373, guid: 916bdaa9a89f2a242885ccf8f2db293d, type: 3}
   spawnPosition1: {fileID: 1186716385}
+--- !u!114 &1231621221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6858865119598840144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 967c3f259c18c984c9ff6b8efc072c82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roundUI: {fileID: 2598342440097638991}
+  endGameUI: {fileID: 8104306423792893740}
+  pauseMenuUI: {fileID: 6640210101253751051}
+  roundNumber: {fileID: 6024241146212956828}
+  activePlayerName: {fileID: 1555276950071003120}
+  activePlayerScore: {fileID: 3551718763153893163}
+  activePlayerWins: {fileID: 7743439935317607253}
+  endOfGameInfo: {fileID: 1400556908116698021}
+  role: {fileID: 336459133747754945}
 --- !u!1 &7142011579794222684
 GameObject:
   m_ObjectHideFlags: 0
