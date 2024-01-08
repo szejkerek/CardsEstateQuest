@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 606cce070b68f2348bbb519afceeb734, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -110,3 +110,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isTaken: 0
   _hoverMaterial: {fileID: 2100000, guid: 55eaf6e12c81e784196d574f59ae57c1, type: 2}
+  ghostMaterial: {fileID: 2100000, guid: 45e56b7689224d748971b081219b3551, type: 2}

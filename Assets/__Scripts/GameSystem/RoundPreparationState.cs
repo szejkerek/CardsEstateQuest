@@ -6,6 +6,7 @@ public class RoundPreparationState : IRoundState
 {
     public void Update(RoundManager roundManager)
     {
+        roundManager.IncreaseRoundNumber();
         if(roundManager.ThereWasWinnerLastRound())
         {
             roundManager.ActivateRandomWinner();

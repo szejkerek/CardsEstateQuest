@@ -31,6 +31,7 @@ public class PauseMenuManager : MonoBehaviour
         pauseMenuUI.SetActive(true);
         GameIsPaused = true;
     }
+
     public void LoadMenu()
     {
         SceneLoader.Instance.LoadScene(SceneEnum.MainMenu);

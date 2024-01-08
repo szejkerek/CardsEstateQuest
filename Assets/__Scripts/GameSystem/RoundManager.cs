@@ -5,23 +5,39 @@ using UnityEngine;
 
 public class RoundManager : MonoBehaviour
 {
+    [SerializeField] GameObject cardHolder1;
+    [SerializeField] GameObject cardHolder2;
     public int RoundNumber => roundNumber;
 
     public RoundPreparationState RoundPreparationState;
     public RoundPlayState RoundPlayState;
+    public RoundEndState RoundEndState;
+    public GameEndState GameEndState;
 
-    [SerializeField] private List<IPlayer> _players;
-
+    private IPlayer playerOne;
+    private IPlayer playerTwo;
     private int roundNumber;
-    private List<int> winnersIndexes;
+    private List<IPlayer> previousRoundWinners;
+    private List<IPlayer> gameWinners;
     private IRoundState currentState;
+    private RoundUIManager uiManager;
+
     private void Awake()
     {
-        roundNumber = 1;
-        winnersIndexes = new List<int>();
+        roundNumber = 0;
+        IPlayer[] players = GetComponentsInChildren<IPlayer>();
+        playerOne = players[0];
+        playerTwo = players[1];
+        uiManager = GetComponent<RoundUIManager>();
+        previousRoundWinners = new List<IPlayer>();
+        gameWinners = new List<IPlayer>();
         RoundPreparationState =  new RoundPreparationState();
         RoundPlayState = new RoundPlayState();
+        RoundEndState = new RoundEndState();
+        GameEndState = new GameEndState();
         currentState = RoundPreparationState;
+        playerOne.SetRandomRole();
+        playerTwo.SetRandomRole();
     }
 
     void Update()
@@ -35,28 +51,75 @@ public class RoundManager : MonoBehaviour
     }
     public void ActivateRandomPlayer()
     {
-        int playersCount = _players.Count;
-        int playerToActivate = new System.Random().Next(0, playersCount);
+        int playerToActivate = new System.Random().Next(1, 3);
 
-        _players[playerToActivate].SetAsActive();
+        if (playerToActivate == 1) 
+        {
+            playerOne.SetAsActive();
+            cardHolder1.SetActive(true);
+            cardHolder2.SetActive(false);
+        }
+        else
+        {
+            playerTwo.SetAsActive();
+            cardHolder1.SetActive(false);
+            cardHolder2.SetActive(true);
+        }
+
+        UpdateActivePlayerUIInfo();
     }
 
     public void ActivateRandomWinner()
     {
-        int winnersCount = winnersIndexes.Count;
-        if (winnersCount > 0)
+        if (previousRoundWinners.Count > 0)
         {
-            int winnerToActivate = new System.Random().Next(0, winnersCount);
-            for (int i = 0; i < winnersCount; i++) 
-            {
-                _players[winnersIndexes[winnerToActivate]].SetAsActive();
-            }
+            int winnerToActivate = new System.Random().Next(0, previousRoundWinners.Count);
+
+            previousRoundWinners[winnerToActivate].SetAsActive();
+
+            UpdateActivePlayerUIInfo();
+        }
+    }
+
+    private void UpdateActivePlayerUIInfo()
+    {
+        IPlayer activePlayer = GetActivePlayer();
+        uiManager.SetAtivePlayerScoreText(activePlayer.GetPlayerScore().ToString());
+        uiManager.SetctivePlayerWinsText(activePlayer.GetPlayerWins().ToString());
+        uiManager.SetActivePlayerNameText(activePlayer.GetPlayerName());
+        uiManager.SetRoleText(activePlayer.GetRole().ToString());
+
+    }
+    public void AddPoint(int green, int building)
+    {
+        IPlayer activePlayer = GetActivePlayer();
+        if(activePlayer.GetRole() == PlayerRole.Eco)
+        {
+            activePlayer.AddPoint(green);
+        }
+        else
+        {
+            activePlayer.AddPoint(building);
+        }
+   
+
+    }
+
+    private IPlayer GetActivePlayer()
+    {
+        if (playerOne.IsActive())
+        {
+            return playerOne;
+        }
+        else
+        {
+            return playerTwo;
         }
     }
 
     public bool ThereWasWinnerLastRound()
     {
-        if (winnersIndexes.Count == 0) 
+        if (previousRoundWinners.Count == 0) 
         {
             return false;
         }
@@ -68,67 +131,114 @@ public class RoundManager : MonoBehaviour
 
     public void ActivateNextPlayer()
     {
-        bool currentPlayerDesactivated = false;
-        bool nextPlayerActivated = false;
-        while (!nextPlayerActivated)
+        IPlayer activePlayer = GetActivePlayer();
+
+        if (activePlayer == playerOne && !playerTwo.HasFolded())
         {
-            foreach (IPlayer player in _players)
-            {
-                if (currentPlayerDesactivated && !nextPlayerActivated)
-                {
-                    player.SetAsActive();
-                    nextPlayerActivated = true;
-                }
-                if (player.IsActive() && !currentPlayerDesactivated)
-                {
-                    player.SetAsUnactive();
-                    currentPlayerDesactivated = true;
-                }
-            }
+            playerOne.SetAsUnactive();
+            playerTwo.SetAsActive();
+            UpdateActivePlayerUIInfo();
+            cardHolder1.SetActive(false);
+            cardHolder2.SetActive(true);
+        }
+        else if (activePlayer == playerTwo && !playerOne.HasFolded())
+        {
+            playerTwo.SetAsUnactive();
+            playerOne.SetAsActive();
+            UpdateActivePlayerUIInfo();
+            cardHolder1.SetActive(true);
+            cardHolder2.SetActive(false);
         }
     }
 
-    public void DeterimneWinner()
+    public void DeterimneRoundWinner()
     {
-        float bestScore = -1;
-        for (int i = 0; i < _players.Count; i++) 
+        if(playerOne.GetPlayerScore() > playerTwo.GetPlayerScore()) 
         {
-            if (bestScore <= _players[i].GetPlayerScore())
-            {
-                bestScore = _players[i].GetPlayerScore();
-            }
+            previousRoundWinners.Add(playerOne);
+            playerOne.RegisterWin();
         }
-        for(int i = 0; i < _players.Count; i++) 
+        else if (playerOne.GetPlayerScore() < playerTwo.GetPlayerScore())
         {
-            if (_players[i].GetPlayerScore() == bestScore) 
-            {
-                _players[i].RegisterWin();
-                winnersIndexes[i] = i;
-            }
+            previousRoundWinners.Add(playerTwo);
+            playerTwo.RegisterWin();
         }
+        else
+        {
+            previousRoundWinners.Add(playerOne);
+            previousRoundWinners.Add(playerTwo);
+            playerOne.RegisterWin();
+                playerTwo.RegisterWin();
+        }
+    }
+
+    public void DetermineGameWinner()
+    {
+        if (playerOne.GetPlayerWins() > playerTwo.GetPlayerWins())
+        {
+            gameWinners.Add(playerOne);
+            uiManager.SetEndOfGameInfoText(playerOne.GetPlayerName() + " has won!");
+        }
+        else if (playerOne.GetPlayerWins() < playerTwo.GetPlayerWins())
+        {
+            gameWinners.Add(playerTwo);
+            uiManager.SetEndOfGameInfoText(playerTwo.GetPlayerName() + " has won!");
+        }
+        else
+        {
+            gameWinners.Add(playerOne);
+            gameWinners.Add(playerTwo);
+            uiManager.SetEndOfGameInfoText("Draw!");
+        }
+
+        uiManager.ShowEndGameUI();
     }
 
     public void FoldActivePlayer()
     {
-        foreach (IPlayer player in _players)
+        IPlayer activePlayer = GetActivePlayer();
+
+        if (activePlayer == playerOne)
         {
-            if (player.IsActive())
-            {
-                player.SetAsFolded();
-            }
+            playerOne.SetAsFolded();
         }
+        else
+        {
+            playerTwo.SetAsFolded();
+        }
+
+        ActivateNextPlayer();
     }
 
     public void UnfoldPlayers()
     { 
-        foreach (IPlayer player in _players)
+        playerOne.SetAsUnfolded();
+        playerTwo.SetAsUnfolded();
+    }
+
+    public bool AllPlayersHasFolded()
+    {
+        if(playerOne.HasFolded() && playerTwo.HasFolded()) 
         {
-            player.SetAsUnfolded();
+            return true;
         }
+
+        return false;
     }
 
     public void ResetWinnerList()
     {
-        winnersIndexes.Clear();
+        previousRoundWinners.Clear();
+    }
+
+    public void IncreaseRoundNumber()
+    {
+        roundNumber++;
+        uiManager.SetRoundNumberText(roundNumber.ToString());
+    }
+
+    public int GetRoundNumber()
+    {
+        return roundNumber;
     }
 }

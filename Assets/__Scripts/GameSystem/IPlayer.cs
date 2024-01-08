@@ -10,6 +10,7 @@ public interface IPlayer
 
     public float GetPlayerScore();
 
+    public void AddPoint(int point);
     public bool HasFolded();
 
     public bool IsActive();
@@ -23,4 +24,7 @@ public interface IPlayer
     public void SetAsUnfolded();
 
     public void RegisterWin();
+
+    public PlayerRole GetRole();
+    public void SetRandomRole();
 }

@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Icon>k__BackingField: {fileID: 21300000, guid: dda77d224fcc3d9499e9e09596fa4c20, type: 3}
   <Category>k__BackingField: Floor Aspect Ratio
+  <ValueType>k__BackingField: 1
