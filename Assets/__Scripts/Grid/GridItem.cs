@@ -14,6 +14,10 @@ public class GridItem : MonoBehaviour
     GameObject currentBuilding = null;
     List<GridItem> neighbors = new List<GridItem>();
     int neighborCount = 0;
+
+    GameObject ghostRef = null;
+
+
     private void Awake()
     {
         _renderer = GetComponent<Renderer>();
@@ -34,17 +38,54 @@ public class GridItem : MonoBehaviour
     {
         hoversOver = true;
         _renderer.material = _hoverMaterial;
+
+        PlaceGhost();
     }
 
     public void OnMouseExit()
     {
         hoversOver = false;
+        RemoveGhost();
         _renderer.material = _initalMaterial;
     }
- 
-   
+
+    public Material ghostMaterial;
+    private void PlaceGhost()
+    {
+        if (ghostRef != null)
+            return;
+
+        cardObject = manager.SelectedCard;
+
+        if (cardObject == null)
+            return;
+
+        ghostRef = Instantiate(cardObject.Model, transform.position, transform.rotation);
+
+        ApplyGhostMaterialRecursively(ghostRef.transform);
+    }
+
+    private void ApplyGhostMaterialRecursively(Transform parent)
+    {
+        foreach (Renderer renderer in parent.GetComponentsInChildren<Renderer>())
+        {
+            renderer.material = ghostMaterial;
+        }
+        foreach (Transform child in parent)
+        {
+            ApplyGhostMaterialRecursively(child);
+        }
+    }
+
+    private void RemoveGhost()
+    {
+        Destroy(ghostRef);
+        ghostRef = null;
+    }
+
     public void PlaceCard()
     {
+        RemoveGhost();
         cardObject = manager.SelectedCard;
         currentBuilding = Instantiate(cardObject.Model, transform.position, transform.rotation);
         Transform meshChild = currentBuilding.transform.Find("Mesh"); //String yikes TODO: Zmienić na referencje na postawie modelu
@@ -52,11 +93,13 @@ public class GridItem : MonoBehaviour
         meshChild.gameObject.AddComponent<BoxCollider>();
 
         CalculateAverageParameters();
-   //     GameplayManager.Instance.ParameterGoalManager.UpdateGlobalParameters(card.Parameters);
         GameplayManager.Instance.DeselectCard();
 
         Debug.Log("Placed");
     }
+
+
+
     private void CalculateAverageParameters()
     {
         Vector3 currentPosition = transform.position;
