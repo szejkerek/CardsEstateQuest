@@ -1,10 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
+using UnityEngine.EventSystems;
 
-public class CardItem : MonoBehaviour
+public class CardItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     private CardObject card;
+    private RectTransform rectTransform;
+
+    private void Awake()
+    {
+        rectTransform = GetComponent<RectTransform>();
+    }
 
     public void Initialize(CardObject _card)
     {
@@ -21,5 +29,13 @@ public class CardItem : MonoBehaviour
         return card;
     }
 
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        rectTransform.DOScale(new Vector3(1.2f, 1.2f, 1.2f), 0.3f);
+    }
 
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        rectTransform.DOScale(Vector3.one, 0.3f);
+    }
 }
