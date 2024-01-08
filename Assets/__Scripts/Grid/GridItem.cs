@@ -95,6 +95,7 @@ public class GridItem : MonoBehaviour
         CalculateAverageParameters();
         GameplayManager.Instance.DeselectCard();
 
+        gameObject.SetActive(false);
         Debug.Log("Placed");
     }
 
