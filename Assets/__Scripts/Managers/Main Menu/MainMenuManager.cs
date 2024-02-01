@@ -1,3 +1,5 @@
+using GordonEssentials;
+using GordonEssentials.Serialization;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -21,8 +23,7 @@ public class MainMenuManager : Singleton<MainMenuManager>
 
     private void LoadDifficulties()
     {
-        List<IDifficulty> tempDifficulties = new List<IDifficulty>();
-        tempDifficulties = DefaultLoader<IDifficulty>.Load(difficultyLabel);
+        List<IDifficulty> tempDifficulties = DataLoader<IDifficulty>.Load(difficultyLabel);
         foreach (var difficulty in tempDifficulties)
         {
             Difficulty tempDiff = new Difficulty(difficulty);
@@ -43,7 +44,7 @@ public class MainMenuManager : Singleton<MainMenuManager>
         }
         PlayerPrefs.SetString("nickname", nickname);
 
-        SceneLoader.Instance.LoadScene(SceneEnum.Gameplay);
+        SceneLoader.Instance.LoadScene(SceneConstants.Gameplay);
     }
 
     public void QuitGame()

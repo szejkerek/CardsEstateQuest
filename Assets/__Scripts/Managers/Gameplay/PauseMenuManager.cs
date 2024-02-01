@@ -1,3 +1,4 @@
+using GordonEssentials;
 using UnityEngine;
 
 public class PauseMenuManager : MonoBehaviour
@@ -34,7 +35,7 @@ public class PauseMenuManager : MonoBehaviour
 
     public void LoadMenu()
     {
-        SceneLoader.Instance.LoadScene(SceneEnum.MainMenu);
+        SceneLoader.Instance.LoadScene(SceneConstants.Main_Menu);
     }
     public void QuitGame()
     {

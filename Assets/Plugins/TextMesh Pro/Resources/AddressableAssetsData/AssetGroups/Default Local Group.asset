@@ -17,26 +17,24 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 6ab4ea9c567eb624fbca4df8d80aaa23
   m_SerializeEntries:
-  - m_GUID: 1b7319621088bf9498e97832fa56f741
-    m_Address: Assets/_Prefabs/Systems.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PersistentSystems
   - m_GUID: b34694609561ab248a191c4e1bd18d57
     m_Address: Assets/GameData/CardParameters
     m_ReadOnly: 0
     m_SerializedLabels:
     - CardParameters
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a7d21ed9422aef947814a2605ef43898
     m_Address: Assets/GameData/DefaultCards
     m_ReadOnly: 0
     m_SerializedLabels:
     - DefaultCards
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: edd15154dee2aa3479badc4a36a83358
     m_Address: Assets/GameData/Difficulty
     m_ReadOnly: 0
     m_SerializedLabels:
     - Difficulty
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 7e690ce0bb635fd4cb074dfe8573316d, type: 2}
   m_SchemaSet:

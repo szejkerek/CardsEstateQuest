@@ -1,3 +1,4 @@
+using GordonEssentials;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -34,7 +35,7 @@ public class EndMenuManager : MonoBehaviour
 
     public void LoadMenu()
     {
-        SceneLoader.Instance.LoadScene(SceneEnum.MainMenu);
+        SceneLoader.Instance.LoadScene(SceneConstants.Main_Menu);
     }
 
     public void QuitGame()
