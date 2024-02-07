@@ -9,7 +9,7 @@
 
 ## Overview
 
-Computer game based on card [game developed by the URBANMODEL at the Faculty of Architecture, Silesian University of Technology. The game, titled "Gra w Osiedle" (Neighborhood Game)](https://www.grawosiedle.polsl.pl/), involves strategic competition between two players to accumulate more points using cards.
+Computer game based on card game developed by the [URBANMODEL](http://urbanmodel.org/pl/grupa-badawcza/) at the Faculty of Architecture, Silesian University of Technology. The game, titled ["Gra w Osiedle"](https://www.grawosiedle.polsl.pl/), involves strategic competition between two players to accumulate more points using cards.
 
 
 
