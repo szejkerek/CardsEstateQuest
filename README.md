@@ -33,3 +33,12 @@ Computer game based on card game developed by the [URBANMODEL](http://urbanmodel
 ![Screenshot_7](https://github.com/szejkerek/CardsEstateQuest/assets/69083596/5231ca4b-9bfd-4bc5-a4f8-3f00b0f31d28)
 
 ![Screenshot_4](https://github.com/szejkerek/CardsEstateQuest/assets/69083596/3f065ba2-b200-467e-8899-46af7a8914ed)
+
+## Downloading the Game
+
+To get started and play the game, you can follow these simple steps to download the latest release from GitHub.
+
+- Visit the [Releases](https://github.com/szejkerek/CardsEstateQuest/releases) page of our GitHub repository.
+- Look for the latest release.
+- Download the appropriate asset for your operating system.
+- Follow the installation instructions for your specific operating system. After installation, you should be able to launch the game and start playing!
