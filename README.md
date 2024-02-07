@@ -7,6 +7,12 @@
 [![GitHub stars](https://img.shields.io/github/stars/szejkerek/CardsEstateQuest?branch=main&label=Stars&logo=GitHub&logoColor=ffffff&labelColor=282828&color=informational&style=flat)](https://github.com/szejkerek)
 [![GitHub user stars](https://img.shields.io/github/stars/szejkerek?affiliations=OWNER&branch=main&label=User%20Stars&logo=GitHub&logoColor=ffffff&labelColor=282828&color=informational&style=flat)](https://github.com/szejkerek)
 
+## Overview
+
+Computer game based on card [game developed by the URBANMODEL at the Faculty of Architecture, Silesian University of Technology. The game, titled "Gra w Osiedle" (Neighborhood Game)](https://www.grawosiedle.polsl.pl/), involves strategic competition between two players to accumulate more points using cards.
+
+
+
 ![Screenshot_2](https://github.com/szejkerek/CardsEstateQuest/assets/69083596/d8f9bac0-c357-46af-a260-c332230f69fd)
 
 ![Screenshot_9](https://github.com/szejkerek/CardsEstateQuest/assets/69083596/1e5d9108-92e8-421c-abd3-60ed11ee2cff)
