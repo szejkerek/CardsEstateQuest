@@ -11,14 +11,24 @@
 
 Computer game based on card game developed by the [URBANMODEL](http://urbanmodel.org/pl/grupa-badawcza/) at the Faculty of Architecture, Silesian University of Technology. The game, titled ["Gra w Osiedle"](https://www.grawosiedle.polsl.pl/), involves strategic competition between two players to accumulate more points using cards.
 
+## Gameplay 
+- Consists of 3 rounds; a player wins by achieving victory in 2 rounds.
+- Board comprises squares with limited size.
+- Cards, with dimensions 3x2, 2x2, or 2x1, have varying parameters.
+- Players take turns placing one card per turn.
+- First round: Players receive X cards and choose roles (*developer* or *ecologist*).
+- Rounds end when both players pass; points are scored based on a point system.
+- Winner determined by the player with the higher total points
+
+## Roles
+- **Developer**: Aims for high development intensity.
+- **Ecologist**: Aims for a large biologically active area.
 
 
 ![Screenshot_2](https://github.com/szejkerek/CardsEstateQuest/assets/69083596/d8f9bac0-c357-46af-a260-c332230f69fd)
-
-![Screenshot_9](https://github.com/szejkerek/CardsEstateQuest/assets/69083596/1e5d9108-92e8-421c-abd3-60ed11ee2cff)
 
 ![Screenshot_3](https://github.com/szejkerek/CardsEstateQuest/assets/69083596/bc896bdf-2788-492b-8840-2e9745ed8b94)
 
 ![Screenshot_7](https://github.com/szejkerek/CardsEstateQuest/assets/69083596/5231ca4b-9bfd-4bc5-a4f8-3f00b0f31d28)
 
-![Screenshot_5](https://github.com/szejkerek/CardsEstateQuest/assets/69083596/42f731df-55d5-4707-9d1d-6be6fe055713)
+![Screenshot_4](https://github.com/szejkerek/CardsEstateQuest/assets/69083596/3f065ba2-b200-467e-8899-46af7a8914ed)
