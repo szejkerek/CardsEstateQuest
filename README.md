@@ -24,6 +24,7 @@ Computer game based on card game developed by the [URBANMODEL](http://urbanmodel
 - **Developer**: Aims for high development intensity.
 - **Ecologist**: Aims for a large biologically active area.
 
+## Visual
 
 ![Screenshot_2](https://github.com/szejkerek/CardsEstateQuest/assets/69083596/d8f9bac0-c357-46af-a260-c332230f69fd)
 
